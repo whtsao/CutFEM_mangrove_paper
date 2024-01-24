@@ -1,2 +1,2 @@
 # CutFEM_mangrove_paper
-Examples of wave-mangrove simulation using CutFEM
+Prepare examples of wave-mangrove simulation using CutFEM for a journal paper 
