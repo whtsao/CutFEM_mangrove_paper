@@ -8,7 +8,7 @@ from proteus import WaveTools as wt
 
 opts= Context.Options([
     ('ns_model',1,"ns_model={0,1} for {rans2p,rans3p}"),
-    ("final_time",60.0,"Final time for simulation"),
+    ("final_time",600.0,"Final time for simulation"),
     ("sampleRate",0.05,"Time interval to output solution"),
     ("gauges", True, "Collect data for validation"),
     ("cfl",0.33,"Desired CFL restriction"),
@@ -120,33 +120,33 @@ boundaryTags = {'y-' : 1,
                 'sponge':7,
                }
 
-slope1=0.35
-zmax=2.
-
-toe1 = 1.
-step_x = 2.
-step_z = 0.8
-toe2 = 10.
-slope = 1.
+toe1 = 3.7308
+stepx = 11.0668
+stepz = 0.85
+toe2 = 47.6428
+tanklen = 73.1639
+slopez = 2.9652
+zmax = 3.
+tankwid = 1.83
 
 vertices=[[0.0,0.0,0.0],#0
-          [2.5,0.0,0.0],#1
-          [4.1, 0.0,0.0], #2
-          [7.0, 0.0,0.0],#3
-          [9.0, 0.0,slope1],#4
-          [9.0, 0.0,zmax],#5
+          [toe1,0.0,0.0],#1
+          [stepx,0.0, stepz], #2
+          [toe2, 0.0, stepz],#3
+          [tanklen, 0.0,slopez],#4
+          [tanklen, 0.0,zmax],#5
           [0.0, 0.0,zmax],#6
           [-wavelength,0.0,zmax],#7
           [-wavelength,0.0,0.0],#8
-          [0.0,1.83,0.0],#9
-          [2.5,1.83,0.0],#10
-          [4.1, 1.83,0.0], #11
-          [7.0, 1.83,0.0],#12
-          [9.0, 1.83,slope1],#13
-          [9.0, 1.83,zmax],#14
-          [0.0, 1.83,zmax],#15
-          [-wavelength,1.83,zmax],#16
-          [-wavelength,1.83,0.0],]#17
+          [0.0,tankwid,0.0],#9
+          [toe1,tankwid,0.0],#10
+          [stepx,tankwid,stepz], #11
+          [toe2,tankwid,stepz],#12
+          [tanklen,tankwid,slopez],#13
+          [tanklen,tankwid,zmax],#14
+          [0.0,tankwid,zmax],#15
+          [-wavelength,tankwid,zmax],#16
+          [-wavelength,tankwid,0.0],]#17
 
 vertexFlags=np.array([6, 6, 6, 6, 6, 6,
                       5,
@@ -240,15 +240,40 @@ tank.setGenerationZones(flags=2,
                    porosity=1.,
                    smoothing=smoothing)
 
-column_gauge_locations=[((0.01,0.5*1.83,0.),(0.01,0.5*1.83,zmax)),
-                        ((2.0,0.5*1.83,0.),(2.0,0.5*1.83,zmax)),
-			((4.0,0.5*1.83,0.),(4.0,0.5*1.83,zmax)),
-			((6.0,0.5*1.83,0.),(6.0,0.5*1.83,zmax))]
+gx = np.array([0.01, 11.38, 14.7, 15.62, 16.54, 17.46, 18.06, 40.62, 41.83, 42.44, 43.35, 43.97, 51.19])
+gz = np.zero(len(gx))
+for i in range(len(gx)):
+    if gx[i]<toe1:
+        gz[i] = 0.
+    elif gx[i]>=toe1 and gx[i]<stepx:
+        gz[i] = (gx[i]-toe1)/(stepx-toe1)*stepz
+    elif gx[i]>=stepx and gx[i]<toe2:
+        gz[i] = stepz
+    elif gx[i]>=toe2 and gx[i]<tanklen:
+        gz[i] = stepz+(gx[i]-toe2)/(tanklen-toe2)*(slopez-stepz)
 
+column_gauge_locations=[((gx[1],0.5*tankwid,gz[1]),(gx[1],0.5*tankwid,zmax)),
+                        ((gx[2],0.5*tankwid,gz[2]),(gx[2],0.5*tankwid,zmax)),
+                        ((gx[3],0.5*tankwid,gz[3]),(gx[3],0.5*tankwid,zmax)),
+                        ((gx[4],0.5*tankwid,gz[4]),(gx[4],0.5*tankwid,zmax)),
+                        ((gx[5],0.5*tankwid,gz[5]),(gx[5],0.5*tankwid,zmax)),
+                        ((gx[6],0.5*tankwid,gz[6]),(gx[6],0.5*tankwid,zmax)),
+                        ((gx[7],0.5*tankwid,gz[7]),(gx[7],0.5*tankwid,zmax)),
+                        ((gx[8],0.5*tankwid,gz[8]),(gx[8],0.5*tankwid,zmax)),
+                        ((gx[9],0.5*tankwid,gz[9]),(gx[9],0.5*tankwid,zmax)),
+                        ((gx[10],0.5*tankwid,gz[10]),(gx[10],0.5*tankwid,zmax)),
+                        ((gx[11],0.5*tankwid,gz[11]),(gx[11],0.5*tankwid,zmax)),
+                        ((gx[12],0.5*tankwid,gz[12]),(gx[12],0.5*tankwid,zmax)),
+                        ((gx[13],0.5*tankwid,gz[13]),(gx[13],0.5*tankwid,zmax))]
 
 tank.attachLineIntegralGauges('vof',gauges=((('vof',), column_gauge_locations),),fileName='column_gauges.csv')
+
+
 #pressure_gauge_locations= ((1.43, 0.15, 0.07), (1.75, 0.15, 0.07),(2.07,0.15,0.07),(2.39,0.15,0.07))
 #tank.attachPointGauges('twp', gauges=((('p',), pressure_gauge_locations),), fileName='pressure_gaugeArray.csv')
+
+
+
 
 #velocity_gauge_locations=((32.24, -1.4,1.25), (43.09, -1.43, 1.40),(43.09,-1.43,1.55),(43.09,-1.43,1.72),(43.09,-1.43,1.86),(57.83,-1.41,1.38))
 #tank.attachPointGauges('twp', gauges=((('u','v','w'), velocity_gauge_locations),), fileName='velocity_gaugeArray.csv')
