@@ -133,8 +133,8 @@ vertices=[[0.0,0.0,0.0],#0
           [toe1,0.0,0.0],#1
           [stepx,0.0, stepz], #2
           [toe2, 0.0, stepz],#3
-          [tanklen, 0.0,slopez],#4
-          [tanklen, 0.0,zmax],#5
+          [toe2, 0.0,slopez],#4
+          [toe2, 0.0,zmax],#5
           [0.0, 0.0,zmax],#6
           [-wavelength,0.0,zmax],#7
           [-wavelength,0.0,0.0],#8
@@ -142,8 +142,8 @@ vertices=[[0.0,0.0,0.0],#0
           [toe1,tankwid,0.0],#10
           [stepx,tankwid,stepz], #11
           [toe2,tankwid,stepz],#12
-          [tanklen,tankwid,slopez],#13
-          [tanklen,tankwid,zmax],#14
+          [toe2,tankwid,slopez],#13
+          [toe2,tankwid,zmax],#14
           [0.0,tankwid,zmax],#15
           [-wavelength,tankwid,zmax],#16
           [-wavelength,tankwid,0.0],]#17

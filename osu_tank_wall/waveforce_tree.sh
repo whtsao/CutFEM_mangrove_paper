@@ -4,7 +4,7 @@
 #SBATCH -t 01:00:00
 #SBATCH -p workq
 #SBATCH -A hpc_ceds3d
-#SBATCH -J osuexp_nowall_hd
+#SBATCH -J osuexp_wall_hd
 #SBATCH -o o.out
 #SBATCH -e e.err
 #load proteus module and ensure proteus's python is in path
