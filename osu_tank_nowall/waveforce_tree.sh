@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH -N 1
-#SBATCH -n 64
+#SBATCH -N 2
+#SBATCH -n 128
 #SBATCH -t 00:10:00
 #SBATCH -p workq
 #SBATCH -A hpc_ceds3d
-#SBATCH -J waveforce_tree
+#SBATCH -J osuexp_nowall_hd
 #SBATCH -o o.out
 #SBATCH -e e.err
 #load proteus module and ensure proteus's python is in path
@@ -27,5 +27,5 @@ cp *.sh $WORK/$SLURM_JOB_NAME.$SLURM_JOBID
 cd $WORK/$SLURM_JOB_NAME.$SLURM_JOBID
 
 python setup.py build_ext -i
-srun parun --TwoPhaseFlow waveforce_tree.py -F -l 5 -C "he=0.2"
+srun parun --TwoPhaseFlow waveforce_tree.py -F -l 5 -C "he=0.3"
 exit 0

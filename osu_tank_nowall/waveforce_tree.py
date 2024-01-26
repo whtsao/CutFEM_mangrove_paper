@@ -127,7 +127,7 @@ toe2 = 47.6428
 tanklen = 73.1639
 slopez = 2.9652
 zmax = 3.
-tankwid = 1.83
+tankwid = 3.66
 
 vertices=[[0.0,0.0,0.0],#0
           [toe1,0.0,0.0],#1
@@ -241,7 +241,8 @@ tank.setGenerationZones(flags=2,
                    smoothing=smoothing)
 
 gx = np.array([0.01, 11.38, 14.7, 15.62, 16.54, 17.46, 18.06, 40.62, 41.83, 42.44, 43.35, 43.97, 51.19])
-gz = np.zero(len(gx))
+gy = np.array([1.38, 1.33, 1.31, 1.33, 1.32, 1.32, 1.31, 1.33, 1.32, 1.32, 1.33, 1.33, 1.36])
+gz = np.zeros(len(gx))
 for i in range(len(gx)):
     if gx[i]<toe1:
         gz[i] = 0.
@@ -252,30 +253,37 @@ for i in range(len(gx)):
     elif gx[i]>=toe2 and gx[i]<tanklen:
         gz[i] = stepz+(gx[i]-toe2)/(tanklen-toe2)*(slopez-stepz)
 
-column_gauge_locations=[((gx[1],0.5*tankwid,gz[1]),(gx[1],0.5*tankwid,zmax)),
-                        ((gx[2],0.5*tankwid,gz[2]),(gx[2],0.5*tankwid,zmax)),
-                        ((gx[3],0.5*tankwid,gz[3]),(gx[3],0.5*tankwid,zmax)),
-                        ((gx[4],0.5*tankwid,gz[4]),(gx[4],0.5*tankwid,zmax)),
-                        ((gx[5],0.5*tankwid,gz[5]),(gx[5],0.5*tankwid,zmax)),
-                        ((gx[6],0.5*tankwid,gz[6]),(gx[6],0.5*tankwid,zmax)),
-                        ((gx[7],0.5*tankwid,gz[7]),(gx[7],0.5*tankwid,zmax)),
-                        ((gx[8],0.5*tankwid,gz[8]),(gx[8],0.5*tankwid,zmax)),
-                        ((gx[9],0.5*tankwid,gz[9]),(gx[9],0.5*tankwid,zmax)),
-                        ((gx[10],0.5*tankwid,gz[10]),(gx[10],0.5*tankwid,zmax)),
-                        ((gx[11],0.5*tankwid,gz[11]),(gx[11],0.5*tankwid,zmax)),
-                        ((gx[12],0.5*tankwid,gz[12]),(gx[12],0.5*tankwid,zmax)),
-                        ((gx[13],0.5*tankwid,gz[13]),(gx[13],0.5*tankwid,zmax))]
-
+column_gauge_locations=[((gx[0],gy[0],gz[0]),(gx[0],gy[0],zmax)),
+                        ((gx[1],gy[1],gz[1]),(gx[1],gy[1],zmax)),
+                        ((gx[2],gy[2],gz[2]),(gx[2],gy[2],zmax)),
+                        ((gx[3],gy[3],gz[3]),(gx[3],gy[3],zmax)),
+                        ((gx[4],gy[4],gz[4]),(gx[4],gy[4],zmax)),
+                        ((gx[5],gy[5],gz[5]),(gx[5],gy[5],zmax)),
+                        ((gx[6],gy[6],gz[6]),(gx[6],gy[6],zmax)),
+                        ((gx[7],gy[7],gz[7]),(gx[7],gy[7],zmax)),
+                        ((gx[8],gy[8],gz[8]),(gx[8],gy[8],zmax)),
+                        ((gx[9],gy[9],gz[9]),(gx[9],gy[9],zmax)),
+                        ((gx[10],gy[10],gz[10]),(gx[10],gy[10],zmax)),
+                        ((gx[11],gy[11],gz[11]),(gx[11],gy[11],zmax)),
+                        ((gx[12],gy[12],gz[12]),(gx[12],gy[12],zmax))]
 tank.attachLineIntegralGauges('vof',gauges=((('vof',), column_gauge_locations),),fileName='column_gauges.csv')
 
 
-#pressure_gauge_locations= ((1.43, 0.15, 0.07), (1.75, 0.15, 0.07),(2.07,0.15,0.07),(2.39,0.15,0.07))
+#pressure_gauge_locations= ((35.89-13.98, 1.53, 1.24),
+#                            (39.5513.98, 1.53, 1.24),
+#                            (43.10-13.98, 1.54, 1.22),
+#                            (46.87-13.98, 1.53, 1.23),
+#                            (50.52-13.98, 1.52, 1.23),
+#                            (54.19-13.98, 1.51, 1.23))
 #tank.attachPointGauges('twp', gauges=((('p',), pressure_gauge_locations),), fileName='pressure_gaugeArray.csv')
 
 
-
-
-#velocity_gauge_locations=((32.24, -1.4,1.25), (43.09, -1.43, 1.40),(43.09,-1.43,1.55),(43.09,-1.43,1.72),(43.09,-1.43,1.86),(57.83,-1.41,1.38))
+#velocity_gauge_locations=((32.24-13.98, 1.40, 1.52),
+#                            (43.09-13.98, 1.43, 1.40),
+#                            (43.09-13.98, 1.43, 1.55),
+#                            (43.09-13.98, 1.43, 1.72),
+#                            (43.09-13.98, 1.43, 1.86),
+#                            (57.83-13.98, 1.41, 1.52))
 #tank.attachPointGauges('twp', gauges=((('u','v','w'), velocity_gauge_locations),), fileName='velocity_gaugeArray.csv')
 
 #  ___       _ _   _       _    ____                _ _ _   _

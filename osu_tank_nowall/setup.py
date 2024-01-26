@@ -8,6 +8,6 @@ import numpy
 setup(
     cmdclass = {'build_ext':build_ext},
     ext_modules = [Extension("mangrove",
-                             sources=['mangrove_2.pyx'],
+                             sources=['mangrove_allbay_hd.pyx'],
                              include_dirs = [numpy.get_include()])]
 )
