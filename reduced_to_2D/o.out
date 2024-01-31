@@ -1,0 +1,1976 @@
+Wed Jan 31 09:44:55 CST 2024
+Autoloading gcc/11.2.0
+
+Loading proteus/fct/gcc-11.2.0
+  Loading requirement: gcc/11.2.0
+[       1] Initializing Proteus
+[       1] Initializing MPI
+[       2] Adding . to path for loading modules
+[       2] Loading problem-specific modules
+[       2] Importing input modules
+[       2] /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/TwoPhaseFlow/utils/
+[       2] Loading so module = TwoPhaseFlow_so.py
+[       4] Context input options:
+ns_model[1] ns_model={0,1} for {rans2p,rans3p}
+
+final_time[100.0] Final time for simulation
+
+sampleRate[0.1] Time interval to output solution
+
+gauges[True] Collect data for validation
+
+cfl[0.9] Desired CFL restriction
+
+he[0.04] Max mesh element diameter
+
+hv[1.03] water depth at vegetation
+
+Hm[0.2] significant wave height
+
+Tp[1.85] peak wave period
+
+mangrove_porous[True] turn on porous zone for mangrove section
+
+mangrove_density[HD] mangrove density
+
+ncell[28] number of porous layer for the mangrove section
+
+h_cell[0.05] height of each porous layer
+
+filename[inp_HD_TR1.csv] incident wave record of the first wave gauge
+
+wave_type[Time] runs simulation with experimental wave record
+
+nfb[100] number of frequency bin for reconstructing experimental wave data
+
+
+[       4] Processing context input options from commandline
+[       4] he = 0.2
+[       4] Processing context input options from commandline
+[       4] mangrove_porous = True
+[       4] Processing context input options from commandline
+[       4] filename = 'inp_HD_TR1.csv'
+[       4] INFO WaveTools.py: Not constant sampling rate found, proceeding to signal interpolation to a constant sampling rate
+[       4] INFO: WaveTools.py: performing a direct series decomposition
+[       4] WARNING: Dirichlet condition for k in Atmosphere has not been set. Ignore if RANS is not used
+[       4] WARNING: Dirichlet condition for dissipation in Atmosphere has not been set. Ignore if RANS is not used
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] Key RelaxZones is already attached.
+[       4] ----------
+[       4] Mesh Options
+[       4] nd: 2
+[       4] he: 0.2
+[       4] use_gmsh: False
+[       4] genMesh: True
+[       4] outputFiles_name: mesh
+[       4] outputFiles: {'poly': True, 'ply': False, 'asymptote': False, 'geo': False}
+[       4] restrictFineSolutionToAllMeshes: False
+[       4] parallelPartitioningType: 1
+[       4] nLayersOfOverlapForParallel: 1
+[       4] triangleOptions: VApq30Dena0.02000000
+[       4] nLevels: 1
+[       4] structured: False
+[       4] nn: None
+[       4] nnx: None
+[       4] nny: None
+[       4] nnz: None
+[       4] triangleFlag: 1
+[       4] triangle_string: VApq30Dena
+[       4] ----------
+[       4] Physical Parameters
+[       4] name: SystemPhysics
+[       4] gravity: [ 0.   -9.81  0.  ]
+[       4] nu_0: 1.004e-06
+[       4] rho_0: 998.2
+[       4] nu_1: 1.5e-05
+[       4] rho_1: 1.205
+[       4] surf_tension_coeff: 0.0728
+[       4] movingDomain: False
+[       4] initialConditions: None
+[       4] boundaryConditions: None
+[       4] useBoundaryConditionsModule: True
+[       4] useRANS: False
+[       4] modelDict: OrderedDict([('flow', <proteus.TwoPhaseFlow.utils.Parameters.ParametersModelRANS2P object at 0x14590c918d60>), ('vof', <proteus.TwoPhaseFlow.utils.Parameters.ParametersModelVOF object at 0x14590c918c10>), ('ncls', <proteus.TwoPhaseFlow.utils.Parameters.ParametersModelNCLS object at 0x14590c9189a0>), ('rdls', <proteus.TwoPhaseFlow.utils.Parameters.ParametersModelRDLS object at 0x14590c9187c0>), ('mcorr', <proteus.TwoPhaseFlow.utils.Parameters.ParametersModelMCorr object at 0x14590c918640>)])
+[       4] ----------
+[       4] RANS2P.SubgridError: lagging requested but must lag the first step; switching lagging off and delaying
+[       4] RANS2P.ShockCapturing: lagging requested but must lag the first step; switching lagging off and delaying
+[       4] TwoPhaseFlow parameters for model: rans2p
+[       4] -----
+[       4] rans2p PHYSICS
+[       4] -----
+[       4] COEFFICIENTS OPTIONS
+[       4] CLSVOF_model: None
+[       4] Closure_0_model: None
+[       4] Closure_1_model: None
+[       4] KN_model: None
+[       4] L: [1. 1. 1.]
+[       4] LAG_LES: 1.0
+[       4] LS_model: 2
+[       4] ME_model: 0
+[       4] MOMENTUM_SGE: 1.0
+[       4] NONCONSERVATIVE_FORM: 1.0
+[       4] PRESSURE_PROJECTION_STABILIZATION: 0.0
+[       4] PRESSURE_SGE: 1.0
+[       4] VELOCITY_SGE: 1.0
+[       4] VF_model: 1
+[       4] advection: {0: {0: 'linear', 1: 'linear', 2: 'linear'}, 1: {0: 'nonlinear', 1: 'nonlinear', 2: 'nonlinear'}, 2: {0: 'nonlinear', 1: 'nonlinear', 2: 'nonlinear'}}
+[       4] analyticalSolution: None
+[       4] ball_angular_acceleration: []
+[       4] ball_angular_velocity: []
+[       4] ball_center: []
+[       4] ball_center_acceleration: []
+[       4] ball_density: []
+[       4] ball_force_range: None
+[       4] ball_mass: []
+[       4] ball_radius: []
+[       4] ball_stiffness: None
+[       4] ball_velocity: []
+[       4] barycenters: [[0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]]
+[       4] diffusion: {1: {1: {1: 'constant'}, 2: {2: 'constant'}}, 2: {2: {2: 'constant'}, 1: {1: 'constant'}}}
+[       4] dragAlpha: 0.0
+[       4] dragAlphaTypes: [0.00000000e+00 0.00000000e+00 1.69139262e+07 1.01598046e+00
+ 1.05676385e+00 1.05362248e+00 1.06089064e+00 1.63446939e+00
+ 1.30389039e+00 1.35682620e+00 1.53644328e+00 1.46659068e+00
+ 1.04725617e+00 1.44952826e+00 1.37403255e+00 1.17450560e+00
+ 1.12688648e+00 1.52669959e+00 6.60594698e-01 6.67565713e-01
+ 6.46060711e-01 6.45866241e-01 6.67577077e-01 5.51551667e-01
+ 7.42140789e-01 5.51549390e-01 5.51554391e-01 7.42120671e-01
+ 7.42120671e-01 7.42134810e-01 5.51553115e-01]
+[       4] dragBeta: 0.0
+[       4] dragBetaTypes: [ 0.          0.          0.         22.94924271 22.079065   21.84350614
+ 24.47860554 33.86361375 46.87702123 33.83201532 29.130056   33.5616879
+ 36.05156563 46.92904458 67.40867751 31.029444   20.9642474  31.75124684
+  4.05730854  3.87374756  4.25665794  4.25779011  3.87360947  4.35448636
+  3.87451443  4.3544914   4.35447171  3.87459954  3.87459954  3.87455378
+  4.35447903]
+[       4] eb_adjoint_sigma: 1.0
+[       4] eb_penalty_constant: 100.0
+[       4] elementBoundaryIntegralKeys: [('f', 0), ('f', 1), ('f', 2), ('a', 1, 1), ('a', 1, 2), ('a', 2, 2), ('a', 2, 1), ('H', 1), ('H', 2), ('u', 0), ('u', 1), ('u', 2)]
+[       4] elementIntegralKeys: [('m', 1), ('m', 2), ('f', 0), ('f', 1), ('f', 2), ('a', 1, 1), ('a', 1, 2), ('a', 2, 2), ('a', 2, 1), ('r', 0), ('r', 1), ('r', 2), ('H', 1), ('H', 2), ('u', 0), ('u', 1), ('u', 2)]
+[       4] eps: None
+[       4] epsFact: 1.5
+[       4] epsFact_density: 1.5
+[       4] epsFact_porous: None
+[       4] epsFact_solid: None
+[       4] forceStrongDirichlet: False
+[       4] force_x: None
+[       4] force_y: None
+[       4] force_z: None
+[       4] g: [ 0.   -9.81  0.  ]
+[       4] ghost_penalty_constant: 0.1
+[       4] hamiltonian: {1: {0: 'linear'}, 2: {0: 'linear'}}
+[       4] integrals: {}
+[       4] killNonlinearDrag: 0
+[       4] linearDragFactor: 1.0
+[       4] mass: {1: {1: 'linear'}, 2: {2: 'linear'}}
+[       4] movingDomain: False
+[       4] nParticles: 0
+[       4] nc: 3
+[       4] nd: 2
+[       4] nonlinearDragFactor: 1.0
+[       4] normalize_pressure: False
+[       4] nu: 1.004e-06
+[       4] nu_0: 1.004e-06
+[       4] nu_1: 1.5e-05
+[       4] nullSpace: NoNullSpace
+[       4] particle_alpha: 1000.0
+[       4] particle_beta: 1000.0
+[       4] particle_centroids: []
+[       4] particle_cfl: 0.001
+[       4] particle_epsFact: 3.0
+[       4] particle_netForces: []
+[       4] particle_netMoments: []
+[       4] particle_nitsche: 1.0
+[       4] particle_penalty_constant: 100.0
+[       4] particle_sdfList: None
+[       4] particle_surfaceArea: []
+[       4] particle_surfaceArea_projected: []
+[       4] particle_velocityList: None
+[       4] particle_volume: []
+[       4] phaseFunction: None
+[       4] phi_s_isSet: False
+[       4] porosityTypes: [1.         1.         1.         0.95909506 0.95881683 0.95809525
+ 0.95471215 0.9509036  0.94716237 0.94853471 0.9466996  0.94717797
+ 0.94804278 0.94610868 0.9463536  0.95173515 0.9544948  0.95430838
+ 0.96937776 0.9693883  0.96938878 0.96938878 0.9693883  0.96938849
+ 0.96938838 0.96938849 0.96938849 0.96938838 0.96938838 0.96938838
+ 0.96938849]
+[       4] potential: {1: {1: 'u'}, 2: {2: 'u'}}
+[       4] projection_direction: [1. 0. 0.]
+[       4] reaction: {0: {0: 'constant'}, 1: {1: 'nonlinear', 2: 'nonlinear'}, 2: {1: 'nonlinear', 2: 'nonlinear'}}
+[       4] rho: 998.2
+[       4] rho_0: 998.2
+[       4] rho_1: 1.205
+[       4] sd: True
+[       4] sdInfo: {(1, 1): (array([0, 1, 2], dtype=int32), array([0, 1], dtype=int32)), (1, 2): (array([0, 0, 1], dtype=int32), array([0], dtype=int32)), (2, 2): (array([0, 1, 2], dtype=int32), array([0, 1], dtype=int32)), (2, 1): (array([0, 1, 1], dtype=int32), array([1], dtype=int32))}
+[       4] setParamsFunc: None
+[       4] sigma: 0.0728
+[       4] smagorinskyConstant: 0.1
+[       4] stencil: [{0, 1, 2}, {0, 1, 2}, {0, 1, 2}]
+[       4] stokes: False
+[       4] stress: {}
+[       4] turbulenceClosureModel: 0
+[       4] useConstant_he: False
+[       4] useExact: False
+[       4] useInternalParticleSolver: False
+[       4] useMetrics: 1.0
+[       4] useRBLES: 0.0
+[       4] useVF: 0.0
+[       4] use_ball_as_particle: 1
+[       4] variableNames: ['p', 'u', 'v']
+[       4] vectorComponents: [1, 2]
+[       4] vectorName: velocity
+[       4] END OF COEFFICIENTS OPTIONS
+[       4] L: (1.0, 1.0, 1.0)
+[       4] (!) LevelModelType: <class 'proteus.mprans.RANS2P.LevelModel'>
+[       4] T: 1.0
+[       4] (!) advectiveFluxBoundaryConditions: {0: <function ParametersModelRANS2P._initializePhysics.<locals>.<lambda> at 0x14590b8cdf30>, 1: <function ParametersModelRANS2P._initializePhysics.<locals>.<lambda> at 0x14590b8cdea0>, 2: <function ParametersModelRANS2P._initializePhysics.<locals>.<lambda> at 0x14590b8cde10>}
+[       4] analyticalSolution: {}
+[       4] boundaryCreatesNullSpace: False
+[       4] (!) coefficients: <proteus.mprans.RANS2P.Coefficients object at 0x14590c918be0>
+[       4] (!) diffusiveFluxBoundaryConditions: {0: {}, 1: {1: <function ParametersModelRANS2P._initializePhysics.<locals>.<lambda> at 0x14590b8cdd80>}, 2: {2: <function ParametersModelRANS2P._initializePhysics.<locals>.<lambda> at 0x14590b8cdcf0>}}
+[       4] (!) dirichletConditions: {0: <function ParametersModelRANS2P._initializePhysics.<locals>.<lambda> at 0x14590b8ce0e0>, 1: <function ParametersModelRANS2P._initializePhysics.<locals>.<lambda> at 0x14590b8ce050>, 2: <function ParametersModelRANS2P._initializePhysics.<locals>.<lambda> at 0x14590b8cdfc0>}
+[       4] (!) domain: <proteus.Domain.PlanarStraightLineGraphDomain object at 0x1459287a91e0>
+[       4] dummyInitialConditions: False
+[       4] finalizeStep: <function finalizeStepDummy at 0x14590da871c0>
+[       4] finalizeStepDummy: <function finalizeStepDummy at 0x14590da871c0>
+[       4] fluxBoundaryConditions: {}
+[       4] genMesh: True
+[       4] (!) initialConditions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c918bb0>
+[       4] meshfile: None
+[       4] movingDomain: False
+[       4] (!) name: rans2p
+[       4] (!) nd: 2
+[       4] periodicDirichletConditions: None
+[       4] polyfile: None
+[       4] reload: <function reload at 0x1459da065cf0>
+[       4] sd: True
+[       4] stressFluxBoundaryConditions: {}
+[       4] weakDirichletConditions: None
+[       4] x0: (0.0, 0.0, 0.0)
+[       4] -----
+[       4] rans2p NUMERICS
+[       4] -----
+[       4] DT: 1.0
+[       4] ShockCapturingOptions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c918c70>
+[       4] SubgridErrorOptions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c918c40>
+[       4] adaptMesh: False
+[       4] adaptMesh_nSteps: 10
+[       4] adaptMesh_numIter: 2
+[       4] atol: 1e-08
+[       4] atol_res: {0: 0.0001}
+[       4] atol_u: {0: 0.0001}
+[       4] (!) auxiliaryVariables: [<mprans.BoundaryConditions.RelaxationZoneWaveGenerator object at 0x14590b8d06d0>]
+[       4] bcsTimeDependent: True
+[       4] checkMass: False
+[       4] computeEigenvalues: False
+[       4] computeEigenvectors: None
+[       4] computeLevelLinearSolverRates: False
+[       4] computeLinearSmootherRates: False
+[       4] computeLinearSolverRates: False
+[       4] computeNonlinearLevelSolverRates: False
+[       4] computeNonlinearSmootherRates: False
+[       4] computeNonlinearSolverRates: True
+[       4] (!) conservativeFlux: {0: 'pwl-bdm-opt'}
+[       4] (!) elementBoundaryQuadrature: <proteus.Quadrature.SimplexGaussQuadrature object at 0x145927799bd0>
+[       4] (!) elementQuadrature: <proteus.Quadrature.SimplexGaussQuadrature object at 0x14590c918d90>
+[       4] (!) femSpaces: {0: <class 'proteus.FemTools.C0_AffineLinearOnSimplexWithNodalBasis'>, 1: <class 'proteus.FemTools.C0_AffineLinearOnSimplexWithNodalBasis'>, 2: <class 'proteus.FemTools.C0_AffineLinearOnSimplexWithNodalBasis'>}
+[       4] fullNewtonFlag: True
+[       4] hex: None
+[       4] (!) l_atol_res: 4.000000000000001e-07
+[       4] (!) levelLinearSolver: <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       4] levelNonlinearSolver: <class 'proteus.NonlinearSolvers.Newton'>
+[       4] levelNonlinearSolverConvergenceTest: r
+[       4] (!) linTolFac: 0.01
+[       4] linearPostSmooths: 3
+[       4] linearPreSmooths: 3
+[       4] (!) linearSmoother: <class 'proteus.LinearSolvers.NavierStokes3D'>
+[       4] linearSmootherOptions: ()
+[       4] (!) linearSolverConvergenceTest: r-true
+[       4] linearSolverMaxIts: 1000
+[       4] linearWCycles: 3
+[       4] (!) linear_solver_options_prefix: rans2p_
+[       4] ltol_u: 0.05
+[       4] massLumping: False
+[       4] matrix: <class 'superluWrappers.SparseMatrix'>
+[       4] maxErrorFailures: 10
+[       4] (!) maxLineSearches: 0
+[       4] (!) maxNonlinearIts: 100
+[       4] maxSolverFailures: 10
+[       4] multigridCycles: 2
+[       4] (!) multilevelLinearSolver: <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       4] (!) multilevelNonlinearSolver: <class 'proteus.NonlinearSolvers.Newton'>
+[       4] nDTout: 1
+[       4] nLayersOfOverlapForParallel: 1
+[       4] nLevels: 1
+[       4] nStagesTime: 1
+[       4] name: rans2p
+[       4] needEBQ: False
+[       4] needEBQ_GLOBAL: False
+[       4] (!) nl_atol_res: 4.000000000000001e-05
+[       4] nltol_u: 0.33
+[       4] nn: 3
+[       4] nnx: None
+[       4] nny: None
+[       4] nnz: None
+[       4] nonlinearPostSmooths: 3
+[       4] nonlinearPreSmooths: 3
+[       4] nonlinearSmoother: None
+[       4] nonlinearSolverConvergenceTest: r
+[       4] nonlinearSolverNorm: <function l2Norm at 0x145910674280>
+[       4] nonlinearWCycles: 3
+[       4] (!) numericalFluxType: <class 'proteus.mprans.RANS2P.NumericalFlux'>
+[       4] parallelPartitioningType: 1
+[       4] parallelPeriodic: False
+[       4] periodicDirichletConditions: None
+[       4] postSmooths: 2
+[       4] preSmooths: 2
+[       4] printLevelLinearSolverInfo: False
+[       4] printLinearSmootherInfo: False
+[       4] printLinearSolverInfo: False
+[       4] printNonlinearLevelSolverInfo: False
+[       4] printNonlinearSmootherInfo: False
+[       4] printNonlinearSolverInfo: False
+[       4] psitc: {'nStepsForce': 3, 'nStepsMax': 100}
+[       4] quad: None
+[       4] reactionLumping: False
+[       4] reload: <function reload at 0x1459da065cf0>
+[       4] restrictFineSolutionToAllMeshes: False
+[       4] rtol_res: {0: 0.0001}
+[       4] rtol_u: {0: 0.0001}
+[       4] (!) runCFL: 0.33
+[       4] (!) shockCapturing: <proteus.mprans.RANS2P.ShockCapturing object at 0x14590cec10f0>
+[       4] (!) stepController: <class 'proteus.StepControl.Min_dt_cfl_controller'>
+[       4] (!) subgridError: <proteus.mprans.RANS2P.SubgridError object at 0x14590cec10c0>
+[       4] (!) timeIntegration: <class 'proteus.TimeIntegration.BackwardEuler_cfl'>
+[       4] timeIntegrator: <class 'proteus.TimeIntegration.ForwardIntegrator'>
+[       4] timeOrder: 1
+[       4] (!) tolFac: 0.0
+[       4] (!) triangleFlag: 1
+[       4] (!) triangleOptions: VApq30Dena0.02000000
+[       4] useEisenstatWalker: False
+[       4] ----------
+[       4] VOF.ShockCapturing: lagging requested but must lag the first step; switching lagging off and delaying
+[       4] TwoPhaseFlow parameters for model: vof
+[       4] -----
+[       4] vof PHYSICS
+[       4] -----
+[       4] COEFFICIENTS OPTIONS
+[       4] ENTROPY_TYPE: 0
+[       4] FCT: True
+[       4] LS_modelIndex: None
+[       4] LUMPED_MASS_MATRIX: False
+[       4] RD_modelIndex: 3
+[       4] STABILIZATION_TYPE: 0
+[       4] VOS_model: None
+[       4] V_model: 0
+[       4] advection: {0: {0: 'linear'}}
+[       4] cE: 1.0
+[       4] cK: 0.0
+[       4] cMax: 1.0
+[       4] checkMass: True
+[       4] diffusion: {}
+[       4] ebq_porosity: None
+[       4] ebqe_porosity: None
+[       4] elementBoundaryIntegralKeys: [('f', 0), ('u', 0)]
+[       4] elementIntegralKeys: [('m', 0), ('f', 0), ('u', 0)]
+[       4] epsFact: 1.5
+[       4] flowCoefficients: None
+[       4] flowModelIndex: 0
+[       4] forceStrongConditions: False
+[       4] hamiltonian: {}
+[       4] integrals: {}
+[       4] mass: {0: {0: 'linear'}}
+[       4] modelIndex: 1
+[       4] movingDomain: False
+[       4] nc: 1
+[       4] nullSpace: NoNullSpace
+[       4] outputQuantDOFs: False
+[       4] porosity_dof: None
+[       4] potential: {}
+[       4] q_porosity: None
+[       4] reaction: {}
+[       4] sc_beta: 1.5
+[       4] sc_uref: 1.0
+[       4] sd: True
+[       4] sdInfo: {}
+[       4] setParamsFunc: None
+[       4] set_vos: None
+[       4] stencil: [{0}]
+[       4] stress: {}
+[       4] uL: 0.0
+[       4] uR: 1.0
+[       4] useMetrics: 1.0
+[       4] variableNames: ['vof']
+[       4] vectorComponents: None
+[       4] vectorName: velocity
+[       4] END OF COEFFICIENTS OPTIONS
+[       4] L: (1.0, 1.0, 1.0)
+[       4] (!) LevelModelType: <class 'proteus.mprans.VOF.LevelModel'>
+[       4] T: 1.0
+[       4] (!) advectiveFluxBoundaryConditions: {0: <function ParametersModelVOF._initializePhysics.<locals>.<lambda> at 0x14590b8ce320>}
+[       4] analyticalSolution: {}
+[       4] boundaryCreatesNullSpace: False
+[       4] (!) coefficients: <proteus.mprans.VOF.Coefficients object at 0x14590c9189d0>
+[       4] (!) diffusiveFluxBoundaryConditions: {0: {}}
+[       4] (!) dirichletConditions: {0: <function ParametersModelVOF._initializePhysics.<locals>.<lambda> at 0x14590b8ce3b0>}
+[       4] (!) domain: <proteus.Domain.PlanarStraightLineGraphDomain object at 0x1459287a91e0>
+[       4] dummyInitialConditions: False
+[       4] finalizeStep: <function finalizeStepDummy at 0x14590da871c0>
+[       4] finalizeStepDummy: <function finalizeStepDummy at 0x14590da871c0>
+[       4] fluxBoundaryConditions: {}
+[       4] genMesh: True
+[       4] (!) initialConditions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c918970>
+[       4] meshfile: None
+[       4] movingDomain: False
+[       4] (!) name: vof
+[       4] (!) nd: 2
+[       4] periodicDirichletConditions: None
+[       4] polyfile: None
+[       4] reload: <function reload at 0x1459da065cf0>
+[       4] sd: True
+[       4] stressFluxBoundaryConditions: {}
+[       4] weakDirichletConditions: None
+[       4] x0: (0.0, 0.0, 0.0)
+[       4] -----
+[       4] vof NUMERICS
+[       4] -----
+[       4] DT: 1.0
+[       4] ShockCapturingOptions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c918ac0>
+[       4] SubgridErrorOptions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c918af0>
+[       4] adaptMesh: False
+[       4] adaptMesh_nSteps: 10
+[       4] adaptMesh_numIter: 2
+[       4] atol: 1e-08
+[       4] atol_res: {0: 0.0001}
+[       4] atol_u: {0: 0.0001}
+[       4] (!) auxiliaryVariables: [<proteus.Gauges.Gauges object at 0x14590c919480>]
+[       4] bcsTimeDependent: True
+[       4] checkMass: False
+[       4] computeEigenvalues: False
+[       4] computeEigenvectors: None
+[       4] computeLevelLinearSolverRates: False
+[       4] computeLinearSmootherRates: False
+[       4] computeLinearSolverRates: False
+[       4] computeNonlinearLevelSolverRates: False
+[       4] computeNonlinearSmootherRates: False
+[       4] computeNonlinearSolverRates: True
+[       4] conservativeFlux: None
+[       4] (!) elementBoundaryQuadrature: <proteus.Quadrature.SimplexGaussQuadrature object at 0x145927799bd0>
+[       4] (!) elementQuadrature: <proteus.Quadrature.SimplexGaussQuadrature object at 0x14590c918d90>
+[       4] (!) femSpaces: {0: <class 'proteus.FemTools.C0_AffineLinearOnSimplexWithNodalBasis'>}
+[       4] fullNewtonFlag: True
+[       4] hex: None
+[       4] (!) l_atol_res: 4.0000000000000014e-08
+[       4] (!) levelLinearSolver: <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       4] levelNonlinearSolver: <class 'proteus.NonlinearSolvers.Newton'>
+[       4] levelNonlinearSolverConvergenceTest: r
+[       4] linTolFac: 0.001
+[       4] linearPostSmooths: 3
+[       4] linearPreSmooths: 3
+[       4] linearSmoother: None
+[       4] linearSmootherOptions: ()
+[       4] (!) linearSolverConvergenceTest: r-true
+[       4] linearSolverMaxIts: 1000
+[       4] linearWCycles: 3
+[       4] (!) linear_solver_options_prefix: vof_
+[       4] ltol_u: 0.05
+[       4] massLumping: False
+[       4] matrix: <class 'superluWrappers.SparseMatrix'>
+[       4] maxErrorFailures: 10
+[       4] (!) maxLineSearches: 0
+[       4] (!) maxNonlinearIts: 50
+[       4] maxSolverFailures: 10
+[       4] multigridCycles: 2
+[       4] (!) multilevelLinearSolver: <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       4] (!) multilevelNonlinearSolver: <class 'proteus.NonlinearSolvers.Newton'>
+[       4] nDTout: 1
+[       4] nLayersOfOverlapForParallel: 1
+[       4] nLevels: 1
+[       4] nStagesTime: 1
+[       4] name: vof
+[       4] needEBQ: False
+[       4] needEBQ_GLOBAL: False
+[       4] (!) nl_atol_res: 4.000000000000001e-05
+[       4] nltol_u: 0.33
+[       4] nn: 3
+[       4] nnx: None
+[       4] nny: None
+[       4] nnz: None
+[       4] nonlinearPostSmooths: 3
+[       4] nonlinearPreSmooths: 3
+[       4] nonlinearSmoother: None
+[       4] nonlinearSolverConvergenceTest: r
+[       4] nonlinearSolverNorm: <function l2Norm at 0x145910674280>
+[       4] nonlinearWCycles: 3
+[       4] (!) numericalFluxType: <class 'proteus.mprans.VOF.NumericalFlux'>
+[       4] parallelPartitioningType: 1
+[       4] parallelPeriodic: False
+[       4] periodicDirichletConditions: None
+[       4] postSmooths: 2
+[       4] preSmooths: 2
+[       4] printLevelLinearSolverInfo: False
+[       4] printLinearSmootherInfo: False
+[       4] printLinearSolverInfo: False
+[       4] printNonlinearLevelSolverInfo: False
+[       4] printNonlinearSmootherInfo: False
+[       4] printNonlinearSolverInfo: False
+[       4] psitc: {'nStepsForce': 3, 'nStepsMax': 100}
+[       4] quad: None
+[       4] reactionLumping: False
+[       4] reload: <function reload at 0x1459da065cf0>
+[       4] restrictFineSolutionToAllMeshes: False
+[       4] rtol_res: {0: 0.0001}
+[       4] rtol_u: {0: 0.0001}
+[       4] (!) runCFL: 0.33
+[       4] (!) shockCapturing: <proteus.mprans.VOF.ShockCapturing object at 0x14590cec1d20>
+[       4] (!) stepController: <class 'proteus.StepControl.Min_dt_cfl_controller'>
+[       4] (!) subgridError: <proteus.mprans.VOF.SubgridError object at 0x14590cec1ff0>
+[       4] (!) timeIntegration: <class 'proteus.TimeIntegration.BackwardEuler_cfl'>
+[       4] timeIntegrator: <class 'proteus.TimeIntegration.ForwardIntegrator'>
+[       4] timeOrder: 1
+[       4] (!) tolFac: 0.0
+[       4] (!) triangleFlag: 1
+[       4] (!) triangleOptions: VApq30Dena0.02000000
+[       4] useEisenstatWalker: False
+[       4] ----------
+[       4] NCLS.ShockCapturing: lagging requested but must lag the first step; switching lagging off and delaying
+[       4] TwoPhaseFlow parameters for model: ncls
+[       4] -----
+[       4] ncls PHYSICS
+[       4] -----
+[       4] COEFFICIENTS OPTIONS
+[       4] COUPEZ: False
+[       4] DO_REDISTANCING: False
+[       4] DO_SMOOTHING: False
+[       4] ENTROPY_TYPE: 1
+[       4] LUMPED_MASS_MATRIX: False
+[       4] PURE_BDF: False
+[       4] RD_modelIndex: 3
+[       4] SATURATED_LEVEL_SET: False
+[       4] STABILIZATION_TYPE: 0
+[       4] advection: {}
+[       4] cE: 1.0
+[       4] cfl_redistancing: 1.0
+[       4] checkMass: False
+[       4] diffusion: {}
+[       4] elementBoundaryIntegralKeys: [('H', 0), ('u', 0)]
+[       4] elementIntegralKeys: [('m', 0), ('H', 0), ('u', 0)]
+[       4] epsCoupez: 0.1
+[       4] epsFact: 1.5
+[       4] epsFactRedistancing: 0.33
+[       4] flowModelIndex: 0
+[       4] hamiltonian: {0: {0: 'linear'}}
+[       4] integrals: {}
+[       4] lambda_coupez: 0.1
+[       4] mass: {0: {0: 'linear'}}
+[       4] maxIter_redistancing: 3
+[       4] modelIndex: 2
+[       4] movingDomain: False
+[       4] nc: 1
+[       4] nullSpace: NoNullSpace
+[       4] outputQuantDOFs: False
+[       4] potential: {}
+[       4] pure_redistancing: False
+[       4] reaction: {}
+[       4] redistancing_tolerance: 0.1
+[       4] sc_beta: 1.5
+[       4] sc_uref: 1.0
+[       4] sd: True
+[       4] sdInfo: {}
+[       4] stencil: [{0}]
+[       4] stress: {}
+[       4] useMetrics: 1.0
+[       4] variableNames: ['phi']
+[       4] vectorComponents: None
+[       4] vectorName: velocity
+[       4] waterline_interval: -1
+[       4] END OF COEFFICIENTS OPTIONS
+[       4] L: (1.0, 1.0, 1.0)
+[       4] (!) LevelModelType: <class 'proteus.mprans.NCLS.LevelModel'>
+[       4] T: 1.0
+[       4] advectiveFluxBoundaryConditions: {}
+[       4] analyticalSolution: {}
+[       4] boundaryCreatesNullSpace: False
+[       4] (!) coefficients: <proteus.mprans.NCLS.Coefficients object at 0x14590c9187f0>
+[       4] (!) diffusiveFluxBoundaryConditions: {0: {}}
+[       4] (!) dirichletConditions: {0: <function ParametersModelNCLS._initializePhysics.<locals>.<lambda> at 0x14590b8cdab0>}
+[       4] (!) domain: <proteus.Domain.PlanarStraightLineGraphDomain object at 0x1459287a91e0>
+[       4] dummyInitialConditions: False
+[       4] finalizeStep: <function finalizeStepDummy at 0x14590da871c0>
+[       4] finalizeStepDummy: <function finalizeStepDummy at 0x14590da871c0>
+[       4] fluxBoundaryConditions: {}
+[       4] genMesh: True
+[       4] (!) initialConditions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c918790>
+[       4] meshfile: None
+[       4] movingDomain: False
+[       4] (!) name: ncls
+[       4] (!) nd: 2
+[       4] periodicDirichletConditions: None
+[       4] polyfile: None
+[       4] reload: <function reload at 0x1459da065cf0>
+[       4] sd: True
+[       4] stressFluxBoundaryConditions: {}
+[       4] weakDirichletConditions: None
+[       4] x0: (0.0, 0.0, 0.0)
+[       4] -----
+[       4] ncls NUMERICS
+[       4] -----
+[       4] DT: 1.0
+[       4] ShockCapturingOptions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c918880>
+[       4] SubgridErrorOptions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c9188b0>
+[       4] adaptMesh: False
+[       4] adaptMesh_nSteps: 10
+[       4] adaptMesh_numIter: 2
+[       4] atol: 1e-08
+[       4] atol_res: {0: 0.0001}
+[       4] atol_u: {0: 0.0001}
+[       4] auxiliaryVariables: []
+[       4] bcsTimeDependent: True
+[       4] checkMass: False
+[       4] computeEigenvalues: False
+[       4] computeEigenvectors: None
+[       4] computeLevelLinearSolverRates: False
+[       4] computeLinearSmootherRates: False
+[       4] computeLinearSolverRates: False
+[       4] computeNonlinearLevelSolverRates: False
+[       4] computeNonlinearSmootherRates: False
+[       4] computeNonlinearSolverRates: True
+[       4] conservativeFlux: None
+[       4] (!) elementBoundaryQuadrature: <proteus.Quadrature.SimplexGaussQuadrature object at 0x145927799bd0>
+[       4] (!) elementQuadrature: <proteus.Quadrature.SimplexGaussQuadrature object at 0x14590c918d90>
+[       4] (!) femSpaces: {0: <class 'proteus.FemTools.C0_AffineLinearOnSimplexWithNodalBasis'>}
+[       4] fullNewtonFlag: True
+[       4] hex: None
+[       4] (!) l_atol_res: 4.0000000000000014e-08
+[       4] (!) levelLinearSolver: <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       4] levelNonlinearSolver: <class 'proteus.NonlinearSolvers.Newton'>
+[       4] levelNonlinearSolverConvergenceTest: r
+[       4] linTolFac: 0.001
+[       4] linearPostSmooths: 3
+[       4] linearPreSmooths: 3
+[       4] linearSmoother: None
+[       4] linearSmootherOptions: ()
+[       4] (!) linearSolverConvergenceTest: r-true
+[       4] linearSolverMaxIts: 1000
+[       4] linearWCycles: 3
+[       4] (!) linear_solver_options_prefix: ncls_
+[       4] ltol_u: 0.05
+[       4] massLumping: False
+[       4] matrix: <class 'superluWrappers.SparseMatrix'>
+[       4] maxErrorFailures: 10
+[       4] (!) maxLineSearches: 0
+[       4] (!) maxNonlinearIts: 50
+[       4] maxSolverFailures: 10
+[       4] multigridCycles: 2
+[       4] (!) multilevelLinearSolver: <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       4] (!) multilevelNonlinearSolver: <class 'proteus.NonlinearSolvers.Newton'>
+[       4] nDTout: 1
+[       4] nLayersOfOverlapForParallel: 1
+[       4] nLevels: 1
+[       4] nStagesTime: 1
+[       4] name: ncls
+[       4] needEBQ: False
+[       4] needEBQ_GLOBAL: False
+[       4] (!) nl_atol_res: 4.000000000000001e-05
+[       4] nltol_u: 0.33
+[       4] nn: 3
+[       4] nnx: None
+[       4] nny: None
+[       4] nnz: None
+[       4] nonlinearPostSmooths: 3
+[       4] nonlinearPreSmooths: 3
+[       4] nonlinearSmoother: None
+[       4] nonlinearSolverConvergenceTest: r
+[       4] nonlinearSolverNorm: <function l2Norm at 0x145910674280>
+[       4] nonlinearWCycles: 3
+[       4] (!) numericalFluxType: <class 'proteus.mprans.NCLS.NumericalFlux'>
+[       4] parallelPartitioningType: 1
+[       4] parallelPeriodic: False
+[       4] periodicDirichletConditions: None
+[       4] postSmooths: 2
+[       4] preSmooths: 2
+[       4] printLevelLinearSolverInfo: False
+[       4] printLinearSmootherInfo: False
+[       4] printLinearSolverInfo: False
+[       4] printNonlinearLevelSolverInfo: False
+[       4] printNonlinearSmootherInfo: False
+[       4] printNonlinearSolverInfo: False
+[       4] psitc: {'nStepsForce': 3, 'nStepsMax': 100}
+[       4] quad: None
+[       4] reactionLumping: False
+[       4] reload: <function reload at 0x1459da065cf0>
+[       4] restrictFineSolutionToAllMeshes: False
+[       4] rtol_res: {0: 0.0001}
+[       4] rtol_u: {0: 0.0001}
+[       4] (!) runCFL: 0.33
+[       4] (!) shockCapturing: <proteus.mprans.NCLS.ShockCapturing object at 0x14590cec31f0>
+[       4] (!) stepController: <class 'proteus.StepControl.Min_dt_cfl_controller'>
+[       4] (!) subgridError: <proteus.mprans.NCLS.SubgridError object at 0x14590cec1900>
+[       4] (!) timeIntegration: <class 'proteus.TimeIntegration.BackwardEuler_cfl'>
+[       4] timeIntegrator: <class 'proteus.TimeIntegration.ForwardIntegrator'>
+[       4] timeOrder: 1
+[       4] (!) tolFac: 0.0
+[       4] (!) triangleFlag: 1
+[       4] (!) triangleOptions: VApq30Dena0.02000000
+[       4] useEisenstatWalker: False
+[       4] ----------
+[       4] TwoPhaseFlow parameters for model: rdls
+[       4] -----
+[       4] rdls PHYSICS
+[       4] -----
+[       4] COEFFICIENTS OPTIONS
+[       4] ELLIPTIC_REDISTANCING: 0
+[       4] advection: {}
+[       4] alpha: 1000000000.0
+[       4] applyRedistancing: True
+[       4] backgroundDiffusionFactor: 0.01
+[       4] backgroundDissipationEllipticRedist: 1.0
+[       4] computeMetrics: False
+[       4] copyList: True
+[       4] diffusion: {}
+[       4] dof_u0: None
+[       4] ebq_u0: None
+[       4] ebqe_u0: None
+[       4] elementBoundaryIntegralKeys: [('H', 0), ('u', 0)]
+[       4] elementIntegralKeys: [('m', 0), ('r', 0), ('H', 0), ('u', 0)]
+[       4] epsFact: 0.75
+[       4] freeze_interface_within_elliptic_redist: False
+[       4] hamiltonian: {0: {0: 'nonlinear'}}
+[       4] integrals: {}
+[       4] mass: {0: {0: 'linear'}}
+[       4] movingDomain: False
+[       4] nModelId: 2
+[       4] nc: 1
+[       4] nullSpace: NoNullSpace
+[       4] outputQuantDOFs: False
+[       4] penaltyParameter: 0.0
+[       4] potential: {}
+[       4] q_u0: None
+[       4] rdModelId: 3
+[       4] reaction: {0: {0: 'constant'}}
+[       4] sd: True
+[       4] sdInfo: {}
+[       4] stencil: [{0}]
+[       4] stress: {}
+[       4] u0: None
+[       4] useConstantH: False
+[       4] useExact: False
+[       4] useMetrics: 1.0
+[       4] variableNames: ['phid']
+[       4] vectorComponents: None
+[       4] vectorName: velocity
+[       4] weakBC_on: True
+[       4] weakDirichletFactor: 10.0
+[       4] END OF COEFFICIENTS OPTIONS
+[       4] L: (1.0, 1.0, 1.0)
+[       4] (!) LevelModelType: <class 'proteus.mprans.RDLS.LevelModel'>
+[       4] T: 1.0
+[       4] advectiveFluxBoundaryConditions: {}
+[       4] analyticalSolution: {}
+[       4] boundaryCreatesNullSpace: False
+[       4] (!) coefficients: <proteus.mprans.RDLS.Coefficients object at 0x14590c919810>
+[       4] (!) diffusiveFluxBoundaryConditions: {0: {}}
+[       4] (!) dirichletConditions: {0: <function ParametersModelRDLS._initializePhysics.<locals>.<lambda> at 0x14590b8ce680>}
+[       4] (!) domain: <proteus.Domain.PlanarStraightLineGraphDomain object at 0x1459287a91e0>
+[       4] dummyInitialConditions: False
+[       4] finalizeStep: <function finalizeStepDummy at 0x14590da871c0>
+[       4] finalizeStepDummy: <function finalizeStepDummy at 0x14590da871c0>
+[       4] fluxBoundaryConditions: {}
+[       4] genMesh: True
+[       4] (!) initialConditions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c9185e0>
+[       4] meshfile: None
+[       4] movingDomain: False
+[       4] (!) name: rdls
+[       4] (!) nd: 2
+[       4] periodicDirichletConditions: None
+[       4] polyfile: None
+[       4] reload: <function reload at 0x1459da065cf0>
+[       4] sd: True
+[       4] stressFluxBoundaryConditions: {}
+[       4] (!) weakDirichletConditions: {0: <function setZeroLSweakDirichletBCsSimple at 0x14590b8575b0>}
+[       4] x0: (0.0, 0.0, 0.0)
+[       4] -----
+[       4] rdls NUMERICS
+[       4] -----
+[       4] DT: 1.0
+[       4] ShockCapturingOptions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c91a200>
+[       4] SubgridErrorOptions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c918670>
+[       4] adaptMesh: False
+[       4] adaptMesh_nSteps: 10
+[       4] adaptMesh_numIter: 2
+[       4] atol: 1e-08
+[       4] atol_res: {0: 0.0001}
+[       4] atol_u: {0: 0.0001}
+[       4] auxiliaryVariables: []
+[       4] bcsTimeDependent: True
+[       4] checkMass: False
+[       4] computeEigenvalues: False
+[       4] computeEigenvectors: None
+[       4] computeLevelLinearSolverRates: False
+[       4] computeLinearSmootherRates: False
+[       4] computeLinearSolverRates: False
+[       4] computeNonlinearLevelSolverRates: False
+[       4] computeNonlinearSmootherRates: False
+[       4] computeNonlinearSolverRates: True
+[       4] conservativeFlux: None
+[       4] (!) elementBoundaryQuadrature: <proteus.Quadrature.SimplexGaussQuadrature object at 0x145927799bd0>
+[       4] (!) elementQuadrature: <proteus.Quadrature.SimplexGaussQuadrature object at 0x14590c918d90>
+[       4] (!) femSpaces: {0: <class 'proteus.FemTools.C0_AffineLinearOnSimplexWithNodalBasis'>}
+[       4] fullNewtonFlag: True
+[       4] hex: None
+[       4] (!) l_atol_res: 2.0000000000000005e-05
+[       4] (!) levelLinearSolver: <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       4] levelNonlinearSolver: <class 'proteus.NonlinearSolvers.Newton'>
+[       4] levelNonlinearSolverConvergenceTest: r
+[       4] linTolFac: 0.001
+[       4] linearPostSmooths: 3
+[       4] linearPreSmooths: 3
+[       4] linearSmoother: None
+[       4] linearSmootherOptions: ()
+[       4] (!) linearSolverConvergenceTest: r-true
+[       4] linearSolverMaxIts: 1000
+[       4] linearWCycles: 3
+[       4] (!) linear_solver_options_prefix: rdls_
+[       4] ltol_u: 0.05
+[       4] massLumping: False
+[       4] matrix: <class 'superluWrappers.SparseMatrix'>
+[       4] maxErrorFailures: 10
+[       4] (!) maxLineSearches: 0
+[       4] (!) maxNonlinearIts: 50
+[       4] maxSolverFailures: 10
+[       4] multigridCycles: 2
+[       4] (!) multilevelLinearSolver: <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       4] (!) multilevelNonlinearSolver: <class 'proteus.NonlinearSolvers.Newton'>
+[       4] nDTout: 1
+[       4] nLayersOfOverlapForParallel: 1
+[       4] nLevels: 1
+[       4] nStagesTime: 1
+[       4] name: rdls
+[       4] needEBQ: False
+[       4] needEBQ_GLOBAL: False
+[       4] (!) nl_atol_res: 0.020000000000000004
+[       4] nltol_u: 0.33
+[       4] nn: 3
+[       4] nnx: None
+[       4] nny: None
+[       4] nnz: None
+[       4] nonlinearPostSmooths: 3
+[       4] nonlinearPreSmooths: 3
+[       4] (!) nonlinearSmoother: <class 'proteus.NonlinearSolvers.NLGaussSeidel'>
+[       4] nonlinearSolverConvergenceTest: r
+[       4] nonlinearSolverNorm: <function l2Norm at 0x145910674280>
+[       4] nonlinearWCycles: 3
+[       4] (!) numericalFluxType: <class 'proteus.NumericalFlux.DoNothing'>
+[       4] parallelPartitioningType: 1
+[       4] parallelPeriodic: False
+[       4] periodicDirichletConditions: None
+[       4] postSmooths: 2
+[       4] preSmooths: 2
+[       4] printLevelLinearSolverInfo: False
+[       4] printLinearSmootherInfo: False
+[       4] printLinearSolverInfo: False
+[       4] printNonlinearLevelSolverInfo: False
+[       4] printNonlinearSmootherInfo: False
+[       4] printNonlinearSolverInfo: False
+[       4] psitc: {'nStepsForce': 3, 'nStepsMax': 100}
+[       4] quad: None
+[       4] reactionLumping: False
+[       4] reload: <function reload at 0x1459da065cf0>
+[       4] restrictFineSolutionToAllMeshes: False
+[       4] rtol_res: {0: 0.0001}
+[       4] rtol_u: {0: 0.0001}
+[       4] (!) runCFL: 0.33
+[       4] (!) shockCapturing: <proteus.mprans.RDLS.ShockCapturing object at 0x14590cec13f0>
+[       4] (!) stepController: <class 'proteus.StepControl.Newton_controller'>
+[       4] (!) subgridError: <proteus.mprans.RDLS.SubgridError object at 0x14590cec1330>
+[       4] timeIntegration: <class 'proteus.TimeIntegration.TI_base'>
+[       4] timeIntegrator: <class 'proteus.TimeIntegration.ForwardIntegrator'>
+[       4] timeOrder: 1
+[       4] (!) tolFac: 0.0
+[       4] (!) triangleFlag: 1
+[       4] (!) triangleOptions: VApq30Dena0.02000000
+[       4] useEisenstatWalker: False
+[       4] ----------
+[       4] TwoPhaseFlow parameters for model: mcorr
+[       4] -----
+[       4] mcorr PHYSICS
+[       4] -----
+[       4] COEFFICIENTS OPTIONS
+[       4] VOFModelIndex: 1
+[       4] advection: {}
+[       4] applyCorrection: True
+[       4] applyCorrectionToDOF: True
+[       4] checkMass: False
+[       4] diffusion: {0: {0: {0: 'constant'}}}
+[       4] edgeBasedStabilizationMethods: False
+[       4] elementBoundaryIntegralKeys: [('a', 0, 0), ('u', 0)]
+[       4] elementIntegralKeys: [('a', 0, 0), ('r', 0), ('u', 0)]
+[       4] epsFactDiffusion: 10.0
+[       4] epsFactDirac: 1.5
+[       4] epsFactHeaviside: 1.5
+[       4] flowModelIndex: 0
+[       4] hamiltonian: {}
+[       4] integrals: {}
+[       4] levelSetModelIndex: 2
+[       4] mass: {}
+[       4] massConservationError: 0.0
+[       4] me_model: 4
+[       4] movingDomain: False
+[       4] nc: 1
+[       4] nd: 2
+[       4] nullSpace: NoNullSpace
+[       4] potential: {0: {0: 'u'}}
+[       4] reaction: {0: {0: 'nonlinear'}}
+[       4] sd: True
+[       4] sdInfo: {(0, 0): (array([0, 1, 2], dtype=int32), array([0, 1], dtype=int32))}
+[       4] stencil: [{0}]
+[       4] stress: {}
+[       4] useC: True
+[       4] useConstantH: False
+[       4] useExact: False
+[       4] useMetrics: 1.0
+[       4] useQuadraticRegularization: False
+[       4] variableNames: ['phiCorr']
+[       4] vectorComponents: None
+[       4] vectorName: velocity
+[       4] END OF COEFFICIENTS OPTIONS
+[       4] L: (1.0, 1.0, 1.0)
+[       4] (!) LevelModelType: <class 'proteus.mprans.MCorr.LevelModel'>
+[       4] T: 1.0
+[       4] advectiveFluxBoundaryConditions: {}
+[       4] analyticalSolution: {}
+[       4] boundaryCreatesNullSpace: False
+[       4] (!) coefficients: <proteus.mprans.MCorr.Coefficients object at 0x14590c9184f0>
+[       4] diffusiveFluxBoundaryConditions: {}
+[       4] dirichletConditions: {}
+[       4] (!) domain: <proteus.Domain.PlanarStraightLineGraphDomain object at 0x1459287a91e0>
+[       4] dummyInitialConditions: False
+[       4] finalizeStep: <function finalizeStepDummy at 0x14590da871c0>
+[       4] finalizeStepDummy: <function finalizeStepDummy at 0x14590da871c0>
+[       4] fluxBoundaryConditions: {}
+[       4] genMesh: True
+[       4] (!) initialConditions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c918490>
+[       4] meshfile: None
+[       4] movingDomain: False
+[       4] (!) name: mcorr
+[       4] (!) nd: 2
+[       4] periodicDirichletConditions: None
+[       4] polyfile: None
+[       4] reload: <function reload at 0x1459da065cf0>
+[       4] sd: True
+[       4] stressFluxBoundaryConditions: {}
+[       4] weakDirichletConditions: None
+[       4] x0: (0.0, 0.0, 0.0)
+[       4] -----
+[       4] mcorr NUMERICS
+[       4] -----
+[       4] DT: 1.0
+[       4] ShockCapturingOptions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c918520>
+[       4] SubgridErrorOptions: <proteus.TwoPhaseFlow.utils.Parameters.FreezableClass object at 0x14590c918550>
+[       4] adaptMesh: False
+[       4] adaptMesh_nSteps: 10
+[       4] adaptMesh_numIter: 2
+[       4] atol: 1e-08
+[       4] atol_res: {0: 0.0001}
+[       4] atol_u: {0: 0.0001}
+[       4] auxiliaryVariables: []
+[       4] bcsTimeDependent: True
+[       4] checkMass: False
+[       4] computeEigenvalues: False
+[       4] computeEigenvectors: None
+[       4] computeLevelLinearSolverRates: False
+[       4] computeLinearSmootherRates: False
+[       4] computeLinearSolverRates: False
+[       4] computeNonlinearLevelSolverRates: False
+[       4] computeNonlinearSmootherRates: False
+[       4] computeNonlinearSolverRates: True
+[       4] conservativeFlux: None
+[       4] (!) elementBoundaryQuadrature: <proteus.Quadrature.SimplexGaussQuadrature object at 0x145927799bd0>
+[       4] (!) elementQuadrature: <proteus.Quadrature.SimplexGaussQuadrature object at 0x14590c918d90>
+[       4] (!) femSpaces: {0: <class 'proteus.FemTools.C0_AffineLinearOnSimplexWithNodalBasis'>}
+[       4] fullNewtonFlag: True
+[       4] hex: None
+[       4] (!) l_atol_res: 4.000000000000001e-09
+[       4] (!) levelLinearSolver: <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       4] levelNonlinearSolver: <class 'proteus.NonlinearSolvers.Newton'>
+[       4] levelNonlinearSolverConvergenceTest: r
+[       4] (!) linTolFac: 0.0
+[       4] linearPostSmooths: 3
+[       4] linearPreSmooths: 3
+[       4] linearSmoother: None
+[       4] linearSmootherOptions: ()
+[       4] (!) linearSolverConvergenceTest: r-true
+[       4] linearSolverMaxIts: 1000
+[       4] linearWCycles: 3
+[       4] (!) linear_solver_options_prefix: mcorr_
+[       4] ltol_u: 0.05
+[       4] massLumping: False
+[       4] matrix: <class 'superluWrappers.SparseMatrix'>
+[       4] maxErrorFailures: 10
+[       4] (!) maxLineSearches: 0
+[       4] (!) maxNonlinearIts: 50
+[       4] maxSolverFailures: 10
+[       4] multigridCycles: 2
+[       4] (!) multilevelLinearSolver: <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       4] (!) multilevelNonlinearSolver: <class 'proteus.NonlinearSolvers.Newton'>
+[       4] nDTout: 1
+[       4] nLayersOfOverlapForParallel: 1
+[       4] nLevels: 1
+[       4] nStagesTime: 1
+[       4] name: mcorr
+[       4] needEBQ: False
+[       4] needEBQ_GLOBAL: False
+[       4] (!) nl_atol_res: 4.000000000000001e-06
+[       4] nltol_u: 0.33
+[       4] nn: 3
+[       4] nnx: None
+[       4] nny: None
+[       4] nnz: None
+[       4] nonlinearPostSmooths: 3
+[       4] nonlinearPreSmooths: 3
+[       4] nonlinearSmoother: None
+[       4] nonlinearSolverConvergenceTest: r
+[       4] nonlinearSolverNorm: <function l2Norm at 0x145910674280>
+[       4] nonlinearWCycles: 3
+[       4] (!) numericalFluxType: <class 'proteus.NumericalFlux.DoNothing'>
+[       4] parallelPartitioningType: 1
+[       4] parallelPeriodic: False
+[       4] periodicDirichletConditions: None
+[       4] postSmooths: 2
+[       4] preSmooths: 2
+[       4] printLevelLinearSolverInfo: False
+[       4] printLinearSmootherInfo: False
+[       4] printLinearSolverInfo: False
+[       4] printNonlinearLevelSolverInfo: False
+[       4] printNonlinearSmootherInfo: False
+[       4] printNonlinearSolverInfo: False
+[       4] psitc: {'nStepsForce': 3, 'nStepsMax': 100}
+[       4] quad: None
+[       4] reactionLumping: False
+[       4] reload: <function reload at 0x1459da065cf0>
+[       4] restrictFineSolutionToAllMeshes: False
+[       4] rtol_res: {0: 0.0001}
+[       4] rtol_u: {0: 0.0001}
+[       4] (!) runCFL: 0.33
+[       4] shockCapturing: None
+[       4] (!) stepController: <class 'proteus.StepControl.Min_dt_cfl_controller'>
+[       4] subgridError: None
+[       4] (!) timeIntegration: <class 'proteus.TimeIntegration.BackwardEuler_cfl'>
+[       4] timeIntegrator: <class 'proteus.TimeIntegration.ForwardIntegrator'>
+[       4] timeOrder: 1
+[       4] (!) tolFac: 0.0
+[       4] (!) triangleFlag: 1
+[       4] (!) triangleOptions: VApq30Dena0.02000000
+[       4] (!) useEisenstatWalker: True
+[       4] ----------
+[       4] -----
+[       4] PETSc OPTIONS
+[       4] mcorr_ksp_type: preonly
+[       4] mcorr_pc_factor_mat_solver_type: superlu_dist
+[       4] mcorr_pc_type: lu
+[       4] ncls_ksp_type: preonly
+[       4] ncls_pc_factor_mat_solver_type: superlu_dist
+[       4] ncls_pc_type: lu
+[       4] rans2p_ksp_type: preonly
+[       4] rans2p_pc_factor_mat_solver_type: superlu_dist
+[       4] rans2p_pc_type: lu
+[       4] rdls_ksp_type: preonly
+[       4] rdls_pc_factor_mat_solver_type: superlu_dist
+[       4] rdls_pc_type: lu
+[       4] vof_ksp_type: preonly
+[       4] vof_pc_factor_mat_solver_type: superlu_dist
+[       4] vof_pc_type: lu
+[       4] -----
+[       4] Loading p module = rans2p
+[       4] Loading n module = rans2p
+[       4] Loading p module = vof
+[       4] Loading n module = vof
+[       4] Loading p module = ncls
+[       4] Loading n module = ncls
+[       4] Loading p module = rdls
+[       4] Loading n module = rdls
+[       4] Loading p module = mcorr
+[       4] Loading n module = mcorr
+[       4] Attaching input stream to stdin
+[       4] Running Proteus version 1.8.1
+[       4] Setting simulation processing defaults
+[       4] Starting cox_flume2DV run number 0
+[       4] Initializing NumericalSolution for cox_flume2DV
+ System includes: 
+rans2p
+vof
+ncls
+rdls
+mcorr
+
+[       4] Setting Archiver(s)
+[       4] Setting up MultilevelMesh
+[       4] Building one multilevel mesh for all models
+[       4] Generating mesh for rans2p
+[       4] Calling Triangle to generate 2D mesh for DefaultPSLGDomain
+[       4] Calling triangle on rank 0 with command triangle -VApq30Dena0.02000000 -e mesh.poly
+[       4] Opening mesh.poly.
+Constructing Delaunay triangulation by divide-and-conquer method.
+  Sorting vertices.
+  Forming triangulation.
+  Removing ghost triangles.
+Delaunay milliseconds:  0
+Recovering segments in Delaunay triangulation.
+    Constructing mapping from vertices to triangles.
+  Recovering PSLG segments.
+Segment milliseconds:  0
+Removing unwanted triangles.
+  Marking concavities (external triangles) for elimination.
+  Marking neighbors of marked triangles.
+  Deleting marked triangles.
+Spreading regional attributes.
+Hole milliseconds:  0
+Adding Steiner points to enforce quality.
+  Looking for encroached subsegments.
+  Splitting encroached subsegments.
+  Making a list of bad triangles.
+  Splitting bad triangles.
+Quality milliseconds:  16
+
+Writing mesh.1.node.
+Writing mesh.1.ele.
+Writing mesh.1.poly.
+Writing mesh.1.edge.
+Writing mesh.1.neigh.
+
+Output milliseconds:  185
+Total running milliseconds:  201
+
+Statistics:
+
+  Input vertices: 67
+  Input segments: 96
+  Input holes: 0
+
+  Mesh vertices: 15480
+  Mesh triangles: 29739
+  Mesh edges: 45218
+  Mesh exterior boundary edges: 1219
+  Mesh interior boundary edges: 8917
+  Mesh subsegments (constrained edges): 10136
+
+Mesh quality statistics:
+
+  Smallest area:       0.00086732   |  Largest area:             0.02
+  Shortest edge:           0.0348   |  Longest edge:           0.2977
+  Shortest altitude:     0.027426   |  Largest aspect ratio:   3.2644
+
+  Triangle aspect ratio histogram:
+  1.1547 - 1.5       :      5040    |     15 - 25         :         0
+     1.5 - 2         :      5399    |     25 - 50         :         0
+       2 - 2.5       :     18804    |     50 - 100        :         0
+     2.5 - 3         :       472    |    100 - 300        :         0
+       3 - 4         :        24    |    300 - 1000       :         0
+       4 - 6         :         0    |   1000 - 10000      :         0
+       6 - 10        :         0    |  10000 - 100000     :         0
+      10 - 15        :         0    | 100000 -            :         0
+  (Aspect ratio is longest edge divided by shortest altitude)
+
+  Smallest angle:          30.025   |  Largest angle:          117.01
+
+  Angle histogram:
+      0 -  10 degrees:         0    |     90 - 100 degrees:      1391
+     10 -  20 degrees:         0    |    100 - 110 degrees:       578
+     20 -  30 degrees:         0    |    110 - 120 degrees:        98
+     30 -  40 degrees:     13948    |    120 - 130 degrees:         0
+     40 -  50 degrees:     21146    |    130 - 140 degrees:         0
+     50 -  60 degrees:     19107    |    140 - 150 degrees:         0
+     60 -  70 degrees:      8971    |    150 - 160 degrees:         0
+     70 -  80 degrees:      4490    |    160 - 170 degrees:         0
+     80 -  90 degrees:     19488    |    170 - 180 degrees:         0
+
+Memory allocation statistics:
+
+  Maximum number of vertices: 15480
+  Maximum number of triangles: 29739
+  Maximum number of subsegments: 10136
+  Maximum number of encroached subsegments: 274
+  Maximum number of bad triangles: 8586
+  Maximum number of stacked triangle flips: 2
+  Approximate heap memory use (bytes): 4023008
+
+Algorithmic statistics:
+
+  Number of incircle tests: 99134
+  Number of 2D orientation tests: 65479
+  Number of triangle circumcenter computations: 7097
+
+
+[       4] Done running triangle
+[       4] Generating 1-level mesh from coarse Triangle mesh
+[       5] Partitioning mesh among 64 processors using partitioningType = 1
+[       5] Number of Subdomain Elements Owned= 522
+[       5] Number of Subdomain Elements = 522
+[       5] Number of Subdomain Nodes Owned= 246
+[       5] Number of Subdomain Nodes = 292
+[       5] Number of Subdomain elementBoundaries Owned= 768
+[       5] Number of Subdomain elementBoundaries = 813
+[       5] Number of Subdomain Edges Owned= 768
+[       5] Number of Subdomain Edges = 813
+[       5] Finished partitioning
+[       5] *** Global ***
+Number of triangles  : 29739
+Number of edges : 45218
+Number of nodes : 15480
+
+*** Local ***
+Number of triangles  : 522
+Number of edges : 813
+Number of nodes : 292
+
+[       5] Setting up MultilevelTransport for rans2p
+[       5] Building Transport for each mesh
+[       5] Generating Trial Space
+[       5] Generating Test Space
+[       5] Allocating u
+[       5] Allocating phi
+[       5] Setting Boundary Conditions
+[       5] Setting Boundary Conditions-1
+[       5] Setting Boundary Conditions-2
+[       5] Setting Boundary Conditions-2a
+[       5] Setting Boundary Conditions-3
+[       5] Setting Boundary Conditions-4
+[       5] Initializing OneLevelTransport
+[       5] Updating local to global mappings
+[       5] Building time integration object
+[       5] Calculating numerical quadrature formulas
+[       5] Element Quadrature
+[       5] Element Boundary Quadrature
+[       5] Global Exterior Element Boundary Quadrature
+[       5] initalizing ebqe vectors for post-procesing velocity
+[       5] initalizing basis info
+[       5] setting flux boundary conditions
+[       5] initializing coefficients ebqe
+[       5] ebqe_global allocations in coefficients
+[       5] porosity and drag
+[       5] done with ebqe
+[       5] initalizing numerical flux
+[       5] initializing numerical flux penalty
+[       5] setting up post-processing
+[       5] initializing archiver
+[       5] flux bc objects
+[       5] dirichlet conditions
+[       5] final allocations
+[       5] calling cRANS2P2D_base ctor
+[       5] WARNING: The boundary fluxes at interpart boundaries are skipped if elementBoundaryMaterialType is 0 for RANS2P-based models. This means that DG methods are currently incompatible with RANS2P.
+[       5] Allocating residual and solution vectors
+[       5] Allocating Jacobian
+[       5] Building sparse matrix structure
+[       5] Allocating parallel storage
+[       5] Allocating ghosted parallel vectors on rank 0
+[       5] Allocating un-ghosted parallel vectors on rank 0
+[       5] Allocating matrix on rank 0
+[       5] ParMat_petsc4py comm.rank= 0 blockSize = 3 par_n= 246 par_N=15480 par_nghost=46 par_jacobian.getSizes()= ((738, 46440), (738, 46440)) 
+[       5] Building Mesh Transfers
+[       5] Setting rans2p stepController to <class 'proteus.StepControl.Min_dt_cfl_controller'>
+[       5] Setting up MultilevelLinearSolver forrans2p
+[       5] multilevelLinearSolverChooser type= <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       5] KSP atol 4.000000e-07 rtol 1.000000e-02
+[       5] NAHeader Preconditioner SimpleNavierStokes
+[       5] Preconditioner options not specified, using defaults
+[       5] Setting up MultilevelNonLinearSolver for rans2p
+[       5] Setting up MultilevelTransport for vof
+[       5] Building Transport for each mesh
+[       5] Generating Trial Space
+[       5] Generating Test Space
+[       5] Allocating u
+[       5] Allocating phi
+[       5] Setting Boundary Conditions
+[       5] Setting Boundary Conditions-1
+[       5] Setting Boundary Conditions-2
+[       5] Setting Boundary Conditions-2a
+[       5] Setting Boundary Conditions-3
+[       5] Setting Boundary Conditions-4
+[       5] Initializing OneLevelTransport
+[       5] Updating local to global mappings
+[       5] Building time integration object
+[       5] Calculating numerical quadrature formulas
+[       5] Element Quadrature
+[       5] Element Boundary Quadrature
+[       5] Global Exterior Element Boundary Quadrature
+[       5] Allocating residual and solution vectors
+[       5] Allocating Jacobian
+[       5] Building sparse matrix structure
+[       5] Allocating parallel storage
+[       5] Allocating ghosted parallel vectors on rank 0
+[       5] Allocating un-ghosted parallel vectors on rank 0
+[       5] Allocating matrix on rank 0
+[       5] Transport class has no ParInfo_petsc4py class to store parallel data.
+[       5] ParMat_petsc4py comm.rank= 0 blockSize = 1 par_n= 246 par_N=15480 par_nghost=46 par_jacobian.getSizes()= ((246, 15480), (246, 15480)) 
+[       5] Building Mesh Transfers
+[       5] Setting vof stepController to <class 'proteus.StepControl.Min_dt_cfl_controller'>
+[       5] Setting up MultilevelLinearSolver forvof
+[       5] multilevelLinearSolverChooser type= <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       5] KSP atol 4.000000e-08 rtol 1.000000e-03
+[       5] Setting up MultilevelNonLinearSolver for vof
+[       5] Setting up MultilevelTransport for ncls
+[       5] Building Transport for each mesh
+[       5] Generating Trial Space
+[       5] Generating Test Space
+[       5] Allocating u
+[       5] Allocating phi
+[       5] Setting Boundary Conditions
+[       5] Setting Boundary Conditions-1
+[       5] Setting Boundary Conditions-2
+[       5] Setting Boundary Conditions-2a
+[       5] Setting Boundary Conditions-3
+[       5] Setting Boundary Conditions-4
+[       5] Initializing OneLevelTransport
+[       5] Updating local to global mappings
+[       5] Building time integration object
+[       5] Calculating numerical quadrature formulas
+[       5] Element Quadrature
+[       5] Element Boundary Quadrature
+[       5] Global Exterior Element Boundary Quadrature
+[       5] Allocating residual and solution vectors
+[       5] Allocating Jacobian
+[       5] Building sparse matrix structure
+[       5] Allocating parallel storage
+[       5] Allocating ghosted parallel vectors on rank 0
+[       5] Allocating un-ghosted parallel vectors on rank 0
+[       5] Allocating matrix on rank 0
+[       5] Transport class has no ParInfo_petsc4py class to store parallel data.
+[       5] ParMat_petsc4py comm.rank= 0 blockSize = 1 par_n= 246 par_N=15480 par_nghost=46 par_jacobian.getSizes()= ((246, 15480), (246, 15480)) 
+[       5] Building Mesh Transfers
+[       5] Setting ncls stepController to <class 'proteus.StepControl.Min_dt_cfl_controller'>
+[       5] Setting up MultilevelLinearSolver forncls
+[       5] multilevelLinearSolverChooser type= <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       5] KSP atol 4.000000e-08 rtol 1.000000e-03
+[       5] Setting up MultilevelNonLinearSolver for ncls
+[       5] Setting up MultilevelTransport for rdls
+[       5] Building Transport for each mesh
+[       5] Generating Trial Space
+[       5] Generating Test Space
+[       5] Allocating u
+[       5] Allocating phi
+[       5] Setting Boundary Conditions
+[       5] Setting Boundary Conditions-1
+[       5] Setting Boundary Conditions-2
+[       5] Setting Boundary Conditions-2a
+[       5] Setting Boundary Conditions-3
+[       5] Setting Boundary Conditions-4
+[       5] Initializing OneLevelTransport
+[       5] Updating local to global mappings
+[       5] Building time integration object
+[       5] Calculating numerical quadrature formulas
+[       5] Element Quadrature
+[       5] Element Boundary Quadrature
+[       5] Global Exterior Element Boundary Quadrature
+[       5] Allocating residual and solution vectors
+[       5] Allocating Jacobian
+[       5] Building sparse matrix structure
+[       5] Allocating parallel storage
+[       5] Allocating ghosted parallel vectors on rank 0
+[       5] Allocating un-ghosted parallel vectors on rank 0
+[       5] Allocating matrix on rank 0
+[       5] Transport class has no ParInfo_petsc4py class to store parallel data.
+[       5] ParMat_petsc4py comm.rank= 0 blockSize = 1 par_n= 246 par_N=15480 par_nghost=46 par_jacobian.getSizes()= ((246, 15480), (246, 15480)) 
+[       5] Building Mesh Transfers
+[       5] Setting rdls stepController to <class 'proteus.StepControl.Newton_controller'>
+[       5] Setting up MultilevelLinearSolver forrdls
+[       5] multilevelLinearSolverChooser type= <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       5] KSP atol 2.000000e-05 rtol 1.000000e-03
+[       5] Setting up MultilevelNonLinearSolver for rdls
+[       5] Setting up MultilevelTransport for mcorr
+[       5] Building Transport for each mesh
+[       5] Generating Trial Space
+[       5] Generating Test Space
+[       5] Allocating u
+[       5] Allocating phi
+[       5] Setting Boundary Conditions
+[       5] Setting Boundary Conditions-1
+[       5] Setting Boundary Conditions-2
+[       5] Setting Boundary Conditions-2a
+[       5] Setting Boundary Conditions-3
+[       5] Setting Boundary Conditions-4
+[       5] Initializing OneLevelTransport
+[       5] Updating local to global mappings
+[       5] Building time integration object
+[       5] Calculating numerical quadrature formulas
+[       5] Element Quadrature
+[       5] Element Boundary Quadrature
+[       5] Global Exterior Element Boundary Quadrature
+[       5] Allocating residual and solution vectors
+[       5] Allocating Jacobian
+[       5] Building sparse matrix structure
+[       5] Allocating parallel storage
+[       5] Allocating ghosted parallel vectors on rank 0
+[       5] Allocating un-ghosted parallel vectors on rank 0
+[       5] Allocating matrix on rank 0
+[       5] Transport class has no ParInfo_petsc4py class to store parallel data.
+[       5] ParMat_petsc4py comm.rank= 0 blockSize = 1 par_n= 246 par_N=15480 par_nghost=46 par_jacobian.getSizes()= ((246, 15480), (246, 15480)) 
+[       5] Building Mesh Transfers
+[       5] Setting mcorr stepController to <class 'proteus.StepControl.Min_dt_cfl_controller'>
+[       5] Setting up MultilevelLinearSolver formcorr
+[       5] multilevelLinearSolverChooser type= <class 'proteus.LinearSolvers.KSP_petsc4py'>
+[       5] KSP atol 4.000000e-09 rtol 0.000000e+00
+[       5] Setting up MultilevelNonLinearSolver for mcorr
+[       5] Finished setting up models and solvers
+[       5] Setting up SimTools for mcorr
+[       5] Segmented line [[18.06  0.85  0.  ]
+ [18.06  3.    0.  ]] different from original length by ratio 2.414721e-05
+ segments: [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [array([[18.06      ,  0.85      ,  0.        ],
+       [18.06      ,  0.90754113,  0.        ]]), array([[18.06      ,  0.90754113,  0.        ],
+       [18.06      ,  0.98311722,  0.        ]]), array([[18.06      ,  0.98311722,  0.        ],
+       [18.06      ,  1.03488713,  0.        ]]), array([[18.06      ,  1.03488713,  0.        ],
+       [18.06      ,  1.12966777,  0.        ]]), array([[18.06      ,  1.12966777,  0.        ],
+       [18.06      ,  1.22783571,  0.        ]]), array([[18.06      ,  1.22783571,  0.        ],
+       [18.06      ,  1.27958299,  0.        ]]), array([[18.06      ,  1.27958299,  0.        ],
+       [18.06      ,  1.3871321 ,  0.        ]]), array([[18.06      ,  1.3871321 ,  0.        ],
+       [18.06      ,  1.43776014,  0.        ]]), array([[18.06      ,  1.43776014,  0.        ],
+       [18.06      ,  1.54528178,  0.        ]]), array([[18.06      ,  1.54528178,  0.        ],
+       [18.06      ,  1.57672354,  0.        ]]), array([[18.06      ,  1.57672354,  0.        ],
+       [18.06      ,  1.68193957,  0.        ]]), array([[18.06      ,  1.68193957,  0.        ],
+       [18.06      ,  1.826613  ,  0.        ]]), array([[18.06      ,  1.82666492,  0.        ],
+       [18.06      ,  1.82751795,  0.        ]]), array([[18.06      ,  1.82751795,  0.        ],
+       [18.06      ,  1.96981009,  0.        ]]), array([[18.06      ,  1.96981009,  0.        ],
+       [18.06      ,  1.97873515,  0.        ]]), array([[18.06      ,  1.97873515,  0.        ],
+       [18.06      ,  2.18744859,  0.        ]]), array([[18.06      ,  2.18744859,  0.        ],
+       [18.06      ,  2.27944869,  0.        ]]), array([[18.06      ,  2.27944869,  0.        ],
+       [18.06      ,  2.32422767,  0.        ]]), array([[18.06      ,  2.32422767,  0.        ],
+       [18.06      ,  2.35451672,  0.        ]]), array([[18.06      ,  2.35451672,  0.        ],
+       [18.06      ,  2.47188843,  0.        ]]), array([[18.06      ,  2.47188843,  0.        ],
+       [18.06      ,  2.5201785 ,  0.        ]])], [], [array([[18.06      ,  2.5201785 ,  0.        ],
+       [18.06      ,  2.62531611,  0.        ]]), array([[18.06      ,  2.62531611,  0.        ],
+       [18.06      ,  2.72476616,  0.        ]]), array([[18.06      ,  2.72476616,  0.        ],
+       [18.06      ,  2.74515023,  0.        ]]), array([[18.06      ,  2.74515023,  0.        ],
+       [18.06      ,  2.77506605,  0.        ]]), array([[18.06      ,  2.77506605,  0.        ],
+       [18.06      ,  2.86547542,  0.        ]]), array([[18.06      ,  2.86547542,  0.        ],
+       [18.06      ,  2.90434379,  0.        ]]), array([[18.06      ,  2.90434379,  0.        ],
+       [18.06      ,  3.        ,  0.        ]])], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
+[       6] Gauge for vof[0] at 4.062000e+01 1.545729e+00 0.000000e+00 is closest to node 280
+[       6] Gauge for vof[1] at 4.062000e+01 1.610311e+00 0.000000e+00 is closest to node 279
+[       6] Gauge for vof[2] at 4.062000e+01 1.688800e+00 0.000000e+00 is closest to node 181
+[       6] Gauge for vof[3] at 4.062000e+01 1.720981e+00 0.000000e+00 is closest to node 181
+[       6] Gauge for vof[4] at 4.062000e+01 1.761064e+00 0.000000e+00 is closest to node 181
+[       6] Gauge for vof[5] at 4.062000e+01 1.852068e+00 0.000000e+00 is closest to node 186
+[       6] Gauge for vof[6] at 4.062000e+01 1.944036e+00 0.000000e+00 is closest to node 178
+[       6] Gauge for vof[7] at 4.062000e+01 1.965322e+00 0.000000e+00 is closest to node 178
+[       6] Gauge for vof[8] at 4.062000e+01 2.074795e+00 0.000000e+00 is closest to node 175
+[       6] Gauge for vof[9] at 4.062000e+01 2.084580e+00 0.000000e+00 is closest to node 175
+[       6] Gauge for vof[10] at 4.062000e+01 2.104283e+00 0.000000e+00 is closest to node 175
+[       6] Gauge for vof[11] at 4.062000e+01 2.317197e+00 0.000000e+00 is closest to node 238
+[       6] Gauge for vof[12] at 4.062000e+01 2.340855e+00 0.000000e+00 is closest to node 238
+[       6] Gauge for vof[13] at 4.062000e+01 2.340855e+00 0.000000e+00 is closest to node 238
+[       6] Gauge for vof[14] at 4.062000e+01 2.444536e+00 0.000000e+00 is closest to node 189
+[       6] Gauge for vof[15] at 4.062000e+01 2.500939e+00 0.000000e+00 is closest to node 189
+[       6] Gauge for vof[16] at 4.062000e+01 2.594835e+00 0.000000e+00 is closest to node 231
+[       6] Gauge for vof[17] at 4.062000e+01 2.677106e+00 0.000000e+00 is closest to node 212
+[       6] Gauge for vof[18] at 4.062000e+01 2.677106e+00 0.000000e+00 is closest to node 212
+[       6] Gauge for vof[19] at 4.062000e+01 2.755043e+00 0.000000e+00 is closest to node 212
+[       6] Gauge for vof[20] at 4.062000e+01 2.846343e+00 0.000000e+00 is closest to node 235
+[       6] Gauge for vof[21] at 4.062000e+01 2.960434e+00 0.000000e+00 is closest to node 182
+[       6] Gauge for vof[22] at 4.062000e+01 3.000000e+00 0.000000e+00 is closest to node 182
+[       6] Gauge for: vof at 4.062000e+01 1.545729e+00 0.000000e+00 is on local operator row 0
+[       6] Gauge for: vof at 4.062000e+01 1.610311e+00 0.000000e+00 is on local operator row 1
+[       6] Gauge for: vof at 4.062000e+01 1.688800e+00 0.000000e+00 is on local operator row 2
+[       6] Gauge for: vof at 4.062000e+01 1.720981e+00 0.000000e+00 is on local operator row 3
+[       6] Gauge for: vof at 4.062000e+01 1.761064e+00 0.000000e+00 is on local operator row 4
+[       6] Gauge for: vof at 4.062000e+01 1.852068e+00 0.000000e+00 is on local operator row 5
+[       6] Gauge for: vof at 4.062000e+01 1.944036e+00 0.000000e+00 is on local operator row 6
+[       6] Gauge for: vof at 4.062000e+01 1.965322e+00 0.000000e+00 is on local operator row 7
+[       6] Gauge for: vof at 4.062000e+01 2.074795e+00 0.000000e+00 is on local operator row 8
+[       6] Gauge for: vof at 4.062000e+01 2.084580e+00 0.000000e+00 is on local operator row 9
+[       6] Gauge for: vof at 4.062000e+01 2.104283e+00 0.000000e+00 is on local operator row 10
+[       6] Gauge for: vof at 4.062000e+01 2.317197e+00 0.000000e+00 is on local operator row 11
+[       6] Gauge for: vof at 4.062000e+01 2.340855e+00 0.000000e+00 is on local operator row 12
+[       6] Gauge for: vof at 4.062000e+01 2.340855e+00 0.000000e+00 is on local operator row 13
+[       6] Gauge for: vof at 4.062000e+01 2.444536e+00 0.000000e+00 is on local operator row 14
+[       6] Gauge for: vof at 4.062000e+01 2.500939e+00 0.000000e+00 is on local operator row 15
+[       6] Gauge for: vof at 4.062000e+01 2.594835e+00 0.000000e+00 is on local operator row 16
+[       6] Gauge for: vof at 4.062000e+01 2.677106e+00 0.000000e+00 is on local operator row 17
+[       6] Gauge for: vof at 4.062000e+01 2.677106e+00 0.000000e+00 is on local operator row 18
+[       6] Gauge for: vof at 4.062000e+01 2.755043e+00 0.000000e+00 is on local operator row 19
+[       6] Gauge for: vof at 4.062000e+01 2.846343e+00 0.000000e+00 is on local operator row 20
+[       6] Gauge for: vof at 4.062000e+01 2.960434e+00 0.000000e+00 is on local operator row 21
+[       6] Gauge for: vof at 4.062000e+01 3.000000e+00 0.000000e+00 is on local operator row 22
+[       6] Auxiliary variable calculate_init for model rans2p
+[       6] Auxiliary variable calculate_init for model vof
+[       6] Gauges calculate called at time 0
+[       6] Auxiliary variable calculate_init for model ncls
+[       6] Auxiliary variable calculate_init for model rdls
+[       6] Auxiliary variable calculate_init for model mcorr
+[       6] Using tnList from so = cox_flume2DV
+[       6] Time sequence[0.0, 0.001, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 9.0, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9, 10.0, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7, 10.8, 10.9, 11.0, 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9, 12.0, 12.1, 12.2, 12.3, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 13.0, 13.1, 13.2, 13.3, 13.4, 13.5, 13.6, 13.7, 13.8, 13.9, 14.0, 14.1, 14.2, 14.3, 14.4, 14.5, 14.6, 14.7, 14.8, 14.9, 15.0, 15.1, 15.2, 15.3, 15.4, 15.5, 15.6, 15.7, 15.8, 15.9, 16.0, 16.1, 16.2, 16.3, 16.4, 16.5, 16.6, 16.7, 16.8, 16.9, 17.0, 17.1, 17.2, 17.3, 17.4, 17.5, 17.6, 17.7, 17.8, 17.9, 18.0, 18.1, 18.2, 18.3, 18.4, 18.5, 18.6, 18.7, 18.8, 18.9, 19.0, 19.1, 19.2, 19.3, 19.4, 19.5, 19.6, 19.7, 19.8, 19.9, 20.0, 20.1, 20.2, 20.3, 20.4, 20.5, 20.6, 20.7, 20.8, 20.9, 21.0, 21.1, 21.2, 21.3, 21.4, 21.5, 21.6, 21.7, 21.8, 21.9, 22.0, 22.1, 22.2, 22.3, 22.4, 22.5, 22.6, 22.7, 22.8, 22.9, 23.0, 23.1, 23.2, 23.3, 23.4, 23.5, 23.6, 23.7, 23.8, 23.9, 24.0, 24.1, 24.2, 24.3, 24.4, 24.5, 24.6, 24.7, 24.8, 24.9, 25.0, 25.1, 25.2, 25.3, 25.4, 25.5, 25.6, 25.7, 25.8, 25.9, 26.0, 26.1, 26.2, 26.3, 26.4, 26.5, 26.6, 26.7, 26.8, 26.9, 27.0, 27.1, 27.2, 27.3, 27.4, 27.5, 27.6, 27.7, 27.8, 27.9, 28.0, 28.1, 28.2, 28.3, 28.4, 28.5, 28.6, 28.7, 28.8, 28.9, 29.0, 29.1, 29.2, 29.3, 29.4, 29.5, 29.6, 29.7, 29.8, 29.9, 30.0, 30.1, 30.2, 30.3, 30.4, 30.5, 30.6, 30.7, 30.8, 30.9, 31.0, 31.1, 31.2, 31.3, 31.4, 31.5, 31.6, 31.7, 31.8, 31.9, 32.0, 32.1, 32.2, 32.3, 32.4, 32.5, 32.6, 32.7, 32.8, 32.9, 33.0, 33.1, 33.2, 33.3, 33.4, 33.5, 33.6, 33.7, 33.8, 33.9, 34.0, 34.1, 34.2, 34.3, 34.4, 34.5, 34.6, 34.7, 34.8, 34.9, 35.0, 35.1, 35.2, 35.3, 35.4, 35.5, 35.6, 35.7, 35.8, 35.9, 36.0, 36.1, 36.2, 36.3, 36.4, 36.5, 36.6, 36.7, 36.8, 36.9, 37.0, 37.1, 37.2, 37.3, 37.4, 37.5, 37.6, 37.7, 37.8, 37.9, 38.0, 38.1, 38.2, 38.3, 38.4, 38.5, 38.6, 38.7, 38.8, 38.9, 39.0, 39.1, 39.2, 39.3, 39.4, 39.5, 39.6, 39.7, 39.8, 39.9, 40.0, 40.1, 40.2, 40.3, 40.4, 40.5, 40.6, 40.7, 40.8, 40.9, 41.0, 41.1, 41.2, 41.3, 41.4, 41.5, 41.6, 41.7, 41.8, 41.9, 42.0, 42.1, 42.2, 42.3, 42.4, 42.5, 42.6, 42.7, 42.8, 42.9, 43.0, 43.1, 43.2, 43.3, 43.4, 43.5, 43.6, 43.7, 43.8, 43.9, 44.0, 44.1, 44.2, 44.3, 44.4, 44.5, 44.6, 44.7, 44.8, 44.9, 45.0, 45.1, 45.2, 45.3, 45.4, 45.5, 45.6, 45.7, 45.8, 45.9, 46.0, 46.1, 46.2, 46.3, 46.4, 46.5, 46.6, 46.7, 46.8, 46.9, 47.0, 47.1, 47.2, 47.3, 47.4, 47.5, 47.6, 47.7, 47.8, 47.9, 48.0, 48.1, 48.2, 48.3, 48.4, 48.5, 48.6, 48.7, 48.8, 48.9, 49.0, 49.1, 49.2, 49.3, 49.4, 49.5, 49.6, 49.7, 49.8, 49.9, 50.0, 50.1, 50.2, 50.3, 50.4, 50.5, 50.6, 50.7, 50.8, 50.9, 51.0, 51.1, 51.2, 51.3, 51.4, 51.5, 51.6, 51.7, 51.8, 51.9, 52.0, 52.1, 52.2, 52.3, 52.4, 52.5, 52.6, 52.7, 52.8, 52.9, 53.0, 53.1, 53.2, 53.3, 53.4, 53.5, 53.6, 53.7, 53.8, 53.9, 54.0, 54.1, 54.2, 54.3, 54.4, 54.5, 54.6, 54.7, 54.8, 54.9, 55.0, 55.1, 55.2, 55.3, 55.4, 55.5, 55.6, 55.7, 55.8, 55.9, 56.0, 56.1, 56.2, 56.3, 56.4, 56.5, 56.6, 56.7, 56.8, 56.9, 57.0, 57.1, 57.2, 57.3, 57.4, 57.5, 57.6, 57.7, 57.8, 57.9, 58.0, 58.1, 58.2, 58.3, 58.4, 58.5, 58.6, 58.7, 58.8, 58.9, 59.0, 59.1, 59.2, 59.3, 59.4, 59.5, 59.6, 59.7, 59.8, 59.9, 60.0, 60.1, 60.2, 60.3, 60.4, 60.5, 60.6, 60.7, 60.8, 60.9, 61.0, 61.1, 61.2, 61.3, 61.4, 61.5, 61.6, 61.7, 61.8, 61.9, 62.0, 62.1, 62.2, 62.3, 62.4, 62.5, 62.6, 62.7, 62.8, 62.9, 63.0, 63.1, 63.2, 63.3, 63.4, 63.5, 63.6, 63.7, 63.8, 63.9, 64.0, 64.1, 64.2, 64.3, 64.4, 64.5, 64.6, 64.7, 64.8, 64.9, 65.0, 65.1, 65.2, 65.3, 65.4, 65.5, 65.6, 65.7, 65.8, 65.9, 66.0, 66.1, 66.2, 66.3, 66.4, 66.5, 66.6, 66.7, 66.8, 66.9, 67.0, 67.1, 67.2, 67.3, 67.4, 67.5, 67.6, 67.7, 67.8, 67.9, 68.0, 68.1, 68.2, 68.3, 68.4, 68.5, 68.6, 68.7, 68.8, 68.9, 69.0, 69.1, 69.2, 69.3, 69.4, 69.5, 69.6, 69.7, 69.8, 69.9, 70.0, 70.1, 70.2, 70.3, 70.4, 70.5, 70.6, 70.7, 70.8, 70.9, 71.0, 71.1, 71.2, 71.3, 71.4, 71.5, 71.6, 71.7, 71.8, 71.9, 72.0, 72.1, 72.2, 72.3, 72.4, 72.5, 72.6, 72.7, 72.8, 72.9, 73.0, 73.1, 73.2, 73.3, 73.4, 73.5, 73.6, 73.7, 73.8, 73.9, 74.0, 74.1, 74.2, 74.3, 74.4, 74.5, 74.6, 74.7, 74.8, 74.9, 75.0, 75.1, 75.2, 75.3, 75.4, 75.5, 75.6, 75.7, 75.8, 75.9, 76.0, 76.1, 76.2, 76.3, 76.4, 76.5, 76.6, 76.7, 76.8, 76.9, 77.0, 77.1, 77.2, 77.3, 77.4, 77.5, 77.6, 77.7, 77.8, 77.9, 78.0, 78.1, 78.2, 78.3, 78.4, 78.5, 78.6, 78.7, 78.8, 78.9, 79.0, 79.1, 79.2, 79.3, 79.4, 79.5, 79.6, 79.7, 79.8, 79.9, 80.0, 80.1, 80.2, 80.3, 80.4, 80.5, 80.6, 80.7, 80.8, 80.9, 81.0, 81.1, 81.2, 81.3, 81.4, 81.5, 81.6, 81.7, 81.8, 81.9, 82.0, 82.1, 82.2, 82.3, 82.4, 82.5, 82.6, 82.7, 82.8, 82.9, 83.0, 83.1, 83.2, 83.3, 83.4, 83.5, 83.6, 83.7, 83.8, 83.9, 84.0, 84.1, 84.2, 84.3, 84.4, 84.5, 84.6, 84.7, 84.8, 84.9, 85.0, 85.1, 85.2, 85.3, 85.4, 85.5, 85.6, 85.7, 85.8, 85.9, 86.0, 86.1, 86.2, 86.3, 86.4, 86.5, 86.6, 86.7, 86.8, 86.9, 87.0, 87.1, 87.2, 87.3, 87.4, 87.5, 87.6, 87.7, 87.8, 87.9, 88.0, 88.1, 88.2, 88.3, 88.4, 88.5, 88.6, 88.7, 88.8, 88.9, 89.0, 89.1, 89.2, 89.3, 89.4, 89.5, 89.6, 89.7, 89.8, 89.9, 90.0, 90.1, 90.2, 90.3, 90.4, 90.5, 90.6, 90.7, 90.8, 90.9, 91.0, 91.1, 91.2, 91.3, 91.4, 91.5, 91.6, 91.7, 91.8, 91.9, 92.0, 92.1, 92.2, 92.3, 92.4, 92.5, 92.6, 92.7, 92.8, 92.9, 93.0, 93.1, 93.2, 93.3, 93.4, 93.5, 93.6, 93.7, 93.8, 93.9, 94.0, 94.1, 94.2, 94.3, 94.4, 94.5, 94.6, 94.7, 94.8, 94.9, 95.0, 95.1, 95.2, 95.3, 95.4, 95.5, 95.6, 95.7, 95.8, 95.9, 96.0, 96.1, 96.2, 96.3, 96.4, 96.5, 96.6, 96.7, 96.8, 96.9, 97.0, 97.1, 97.2, 97.3, 97.4, 97.5, 97.6, 97.7, 97.8, 97.9, 98.0, 98.1, 98.2, 98.3, 98.4, 98.5, 98.6, 98.7, 98.8, 98.9, 99.0, 99.1, 99.2, 99.3, 99.4, 99.5, 99.6, 99.7, 99.8, 99.9, 100.0]
+[       6] NAHeader Num Time Steps 1001
+[       6] Setting cox_flume2DV systemStepController to object of type <class 'proteus.SplitOperator.Sequential_MinAdaptiveModelStep'>
+[       6] Finished NumericalSolution initialization
+[       6] Maximum times across MPI tasks for
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof0
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof1
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof2
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof3
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof4
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof5
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof6
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof7
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof8
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof9
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof10
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof11
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof12
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof13
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof14
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof15
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof16
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof17
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof18
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof19
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof20
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof21
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof22
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof23
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof24
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof25
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof26
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof27
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof28
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof29
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof30
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof31
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof32
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof33
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof34
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof35
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof36
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof37
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof38
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof39
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof40
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof41
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof42
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof43
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof44
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof45
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof46
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof47
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof48
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof49
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof50
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof51
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof52
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof53
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof54
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof55
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof56
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof57
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof58
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof59
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof60
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof61
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof62
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof63
+
+         590567 function calls (580356 primitive calls) in 1.903 seconds
+
+   Ordered by: cumulative time
+   List reduced from 847 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.002    0.002    1.879    1.879 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/NumericalSolution.py:71(__init__)
+        1    0.000    0.000    0.773    0.773 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/MeshTools.py:6794(generateMesh)
+        1    0.000    0.000    0.773    0.773 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/MeshTools.py:6810(_generateMesh)
+        5    0.000    0.000    0.640    0.128 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/NumericalSolution.py:287(<listcomp>)
+        1    0.019    0.019    0.639    0.639 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/Gauges.py:657(attachModel)
+       13    0.001    0.000    0.578    0.044 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/Gauges.py:589(getMeshIntersections)
+        4    0.395    0.099    0.395    0.099 {method 'barrier' of 'petsc4py.PETSc.Comm' objects}
+        4    0.000    0.000    0.395    0.099 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/Comm.py:83(barrier)
+       13    0.024    0.002    0.388    0.030 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/MeshTools.py:6372(getMeshIntersections)
+        1    0.000    0.000    0.345    0.345 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/NumericalSolution.py:316(allocateModels)
+        1    0.000    0.000    0.340    0.340 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/subprocess.py:373(check_output)
+        1    0.000    0.000    0.340    0.340 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/subprocess.py:460(run)
+       13    0.330    0.025    0.330    0.025 {method 'scatter' of 'mpi4py.MPI.Comm' objects}
+        7    0.328    0.047    0.328    0.047 {method 'read' of '_io.BufferedReader' objects}
+        1    0.000    0.000    0.328    0.328 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/subprocess.py:1108(communicate)
+        5    0.002    0.000    0.325    0.065 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/Transport.py:6194(initialize)
+        5    0.000    0.000    0.325    0.065 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/Transport.py:6159(__init__)
+        1    0.000    0.000    0.254    0.254 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/MeshTools.py:4022(generateFromTriangleFiles)
+        1    0.249    0.249    0.249    0.249 {built-in method proteus.cmeshTools.generateFromTriangleFiles}
+     7267    0.139    0.000    0.238    0.000 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/MeshTools.py:6176(triangleVerticesToNormals)
+       13    0.011    0.001    0.204    0.016 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/Gauges.py:522(pruneDuplicateSegments)
+        1    0.003    0.003    0.126    0.126 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/MeshTools.py:4914(generateFromExistingCoarseMesh)
+     7046    0.039    0.000    0.125    0.000 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/MeshTools.py:6317(intersectPolyhedron)
+        1    0.001    0.001    0.122    0.122 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/MeshTools.py:589(partitionMesh)
+        1    0.000    0.000    0.117    0.117 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/Archiver.py:44(__init__)
+        1    0.000    0.000    0.117    0.117 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/h5py/_hl/files.py:363(__init__)
+        1    0.005    0.005    0.115    0.115 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/mprans/RANS2P.py:1025(__init__)
+        1    0.115    0.115    0.115    0.115 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/h5py/_hl/files.py:206(make_fid)
+      779    0.002    0.000    0.104    0.000 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/numpy/core/arrayprint.py:561(array2string)
+        1    0.101    0.101    0.101    0.101 {cpartitioning.partitionNodes}
+
+
+Maximum times across MPI tasks for
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof0
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof1
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof2
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof3
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof4
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof5
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof6
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof7
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof8
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof9
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof10
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof11
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof12
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof13
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof14
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof15
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof16
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof17
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof18
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof19
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof20
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof21
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof22
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof23
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof24
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof25
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof26
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof27
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof28
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof29
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof30
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof31
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof32
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof33
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof34
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof35
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof36
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof37
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof38
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof39
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof40
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof41
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof42
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof43
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof44
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof45
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof46
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof47
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof48
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof49
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof50
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof51
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof52
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof53
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof54
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof55
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof56
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof57
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof58
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof59
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof60
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof61
+Wed Jan 31 09:45:03 2024    cox_flume2DV0_init_prof62
+Wed Jan 31 09:45:04 2024    cox_flume2DV0_init_prof63
+
+         590567 function calls (580356 primitive calls) in 1.903 seconds
+
+   Ordered by: internal time
+   List reduced from 847 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        4    0.395    0.099    0.395    0.099 {method 'barrier' of 'petsc4py.PETSc.Comm' objects}
+       13    0.330    0.025    0.330    0.025 {method 'scatter' of 'mpi4py.MPI.Comm' objects}
+        7    0.328    0.047    0.328    0.047 {method 'read' of '_io.BufferedReader' objects}
+        1    0.249    0.249    0.249    0.249 {built-in method proteus.cmeshTools.generateFromTriangleFiles}
+     7267    0.139    0.000    0.238    0.000 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/MeshTools.py:6176(triangleVerticesToNormals)
+        1    0.115    0.115    0.115    0.115 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/h5py/_hl/files.py:206(make_fid)
+        1    0.101    0.101    0.101    0.101 {cpartitioning.partitionNodes}
+       27    0.101    0.004    0.101    0.004 {method 'createGhostWithArray' of 'petsc4py.PETSc.Vec' objects}
+       13    0.068    0.005    0.068    0.005 {method 'gather' of 'mpi4py.MPI.Comm' objects}
+        9    0.063    0.007    0.063    0.007 {built-in method io.open}
+    80465    0.059    0.000    0.059    0.000 {method 'dot' of 'numpy.ndarray' objects}
+        4    0.052    0.013    0.052    0.013 {built-in method posix.waitpid}
+      537    0.044    0.000    0.044    0.000 {method 'flush' of '_io.TextIOWrapper' objects}
+        5    0.043    0.009    0.043    0.009 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/Transport.py:4248(updateLocal2Global)
+        1    0.042    0.042    0.042    0.042 {method 'Split' of 'mpi4py.MPI.Comm' objects}
+     7046    0.039    0.000    0.125    0.000 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/MeshTools.py:6317(intersectPolyhedron)
+       40    0.035    0.001    0.036    0.001 {method 'query' of 'scipy.spatial._ckdtree.cKDTree' objects}
+    14313    0.033    0.000    0.059    0.000 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/numpy/linalg/linalg.py:2357(norm)
+       13    0.031    0.002    0.031    0.002 {method 'getOffsets_CSR' of 'csparsity.PySparsityInfo' objects}
+        6    0.026    0.004    0.026    0.004 {built-in method io.open_code}
+        5    0.025    0.005    0.025    0.005 {method 'setUp' of 'petsc4py.PETSc.Mat' objects}
+        1    0.024    0.024    0.025    0.025 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/PostProcessingTools.py:547(__init__)
+       13    0.024    0.002    0.388    0.030 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/MeshTools.py:6372(getMeshIntersections)
+    66685    0.024    0.000    0.024    0.000 {built-in method numpy.asarray}
+        5    0.022    0.004    0.022    0.004 {method 'setLGMap' of 'petsc4py.PETSc.Mat' objects}
+        1    0.020    0.020    0.020    0.020 {method 'Reduce' of 'mpi4py.MPI.Comm' objects}
+        1    0.019    0.019    0.639    0.639 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/Gauges.py:657(attachModel)
+ 7011/779    0.016    0.000    0.038    0.000 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/numpy/core/arrayprint.py:789(recurser)
+    21891    0.014    0.000    0.014    0.000 {built-in method numpy.array}
+      653    0.013    0.000    0.021    0.000 /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/FemTools.py:3310(getInverseValue)
+
+
+
+[       6] 
+Wall clock percentage of top 20 calls
+-------------------------------------
+      20.8% method 'barrier' of 'petsc4py.PETSc.Comm' objects
+      17.3% method 'scatter' of 'mpi4py.MPI.Comm' objects
+      17.2% method 'read' of '_io.BufferedReader' objects
+      13.1% built-in method proteus.cmeshTools.generateFromTriangleFiles
+       7.3% function 'triangleVerticesToNormals' at /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/MeshTools.py:6176
+       6.0% function 'make_fid' at /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/h5py/_hl/files.py:206
+       5.3% cpartitioning.partitionNodes
+       5.3% method 'createGhostWithArray' of 'petsc4py.PETSc.Vec' objects
+       3.5% method 'gather' of 'mpi4py.MPI.Comm' objects
+       3.3% built-in method io.open
+       3.1% method 'dot' of 'numpy.ndarray' objects
+       2.7% built-in method posix.waitpid
+       2.3% method 'flush' of '_io.TextIOWrapper' objects
+       2.2% function 'updateLocal2Global' at /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/Transport.py:4248
+       2.2% method 'Split' of 'mpi4py.MPI.Comm' objects
+       2.1% function 'intersectPolyhedron' at /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/proteus/MeshTools.py:6317
+       1.8% method 'query' of 'scipy.spatial._ckdtree.cKDTree' objects
+       1.7% function 'norm' at /ddnA/project/cekees/cekees/proteus/fct/lib/python3.10/site-packages/numpy/linalg/linalg.py:2357
+       1.6% method 'getOffsets_CSR' of 'csparsity.PySparsityInfo' objects
+       1.4% built-in method io.open_code
+
+[       6] Representing 120.37272124513294%
+[       6] Setting initial conditions
+[       6] Setting initial conditions for rans2p
+[       6] Setting initial conditions on model rans2p
+[       6] Setting initial conditions for vof
+[       6] Setting initial conditions on model vof
+[       6] Setting initial conditions for ncls
+[       6] Setting initial conditions on model ncls
+[       6] Setting initial conditions for rdls
+[       6] Setting initial conditions on model rdls
+[       6] Setting initial conditions for mcorr
+[       6] Setting initial conditions on model mcorr
+[       6] Attaching models and running spin-up step if requested
+[       6] Attaching models to model rans2p
+[       6] Attaching models to model vof
+[       6] Attaching models to model ncls
+[       6] Attaching models to model rdls
+[       6] Attaching models to model mcorr
+[       6] Attaching models in LevelSetConservation
+[       6] Maximum CFL = 0.0
+[       6] ...   Current dt = 1.0
+[       6] ...   Maximum Cell Based CFL = 0.0
+[       6] ...   Maximum Edge Based CFL = 0.0
+[       6] ...   Current dt = 1.0
+[       6] ...   Maximum Cell Based CFL = 0.0
+[       6] ...   Maximum Edge Based CFL = 0.0
+[       6]    Mass Conservation Error: 0.029558294539030548
+[       6] Attaching models to model rans2p
+[       6] Attaching models to model vof
+[       6] Attaching models to model ncls
+[       6] Attaching models to model rdls
+[       6] Attaching models to model mcorr
+[       6] Attaching models in LevelSetConservation
+[       6] Archiving initial conditions
+[       6] Writing initial mesh for  model = rans2p
+[       6] Writing initial conditions for  model = rans2p
+[       7] Estimating initial time derivative and initializing time history for model rans2p
+[       7] Maximum CFL = 0.0
+[       7] RANS2P: max numDiff_1 2.409187e+01 numDiff_2 2.409187e+01 numDiff_3 2.409187e+01
+[       7] Maximum CFL = 0.0
+[       7] Choosing initial time step for model rans2p
+[       7] Initializing time step on model rans2p to dt =  3.30000e+05
+[       7] Maximum CFL = 0.0
+[       7] Initializing time history for model step controller
+[       7] Archiving initial conditions
+[       7] Writing initial mesh for  model = vof
+[       7] Writing initial conditions for  model = vof
+[       7] Estimating initial time derivative and initializing time history for model vof
+[       7] ...   Current dt = 1.0
+[       7] ...   Maximum Cell Based CFL = 0.0
+[       7] ...   Maximum Edge Based CFL = 0.0
+[       7] VOF: max numDiff 2.202033e-03
+[       7] ...   Current dt = 1.0
+[       7] ...   Maximum Cell Based CFL = 0.0
+[       7] ...   Maximum Edge Based CFL = 0.0
+[       7] Choosing initial time step for model vof
+[       7] Initializing time step on model vof to dt =  3.30000e+05
+[       7] ...   Current dt = 330000.00000000006
+[       7] ...   Maximum Cell Based CFL = 0.0
+[       7] ...   Maximum Edge Based CFL = 0.0
+[       7] Initializing time history for model step controller
+[       7] Archiving initial conditions
+[       7] Writing initial mesh for  model = ncls
+[       7] Writing initial conditions for  model = ncls
+[       7] Estimating initial time derivative and initializing time history for model ncls
+[       7] ...   Current dt = 1.0
+[       7] ...   Maximum Cell Based CFL = 0.0
+[       7] ...   Maximum Edge Based CFL = 0.0
+[       7] NCLS: max numDiff 6.843562e-02
+[       7] ...   Current dt = 1.0
+[       7] ...   Maximum Cell Based CFL = 0.0
+[       7] ...   Maximum Edge Based CFL = 0.0
+[       7] Choosing initial time step for model ncls
+[       7] Initializing time step on model ncls to dt =  3.30000e+05
+[       7] ...   Current dt = 330000.00000000006
+[       7] ...   Maximum Cell Based CFL = 0.0
+[       7] ...   Maximum Edge Based CFL = 0.0
+[       7] Initializing time history for model step controller
+[       7] Archiving initial conditions
+[       7] Writing initial mesh for  model = rdls
+[       7] Writing initial conditions for  model = rdls
+[       7] Estimating initial time derivative and initializing time history for model rdls
+[       7] RDLS: max numDiff 3.340818e-13
+[       7] Choosing initial time step for model rdls
+[       7] Initializing time step on model rdls to dt =  1.00000e-03
+[       7] Initializing time history for model step controller
+[       7] Archiving initial conditions
+[       7] Writing initial mesh for  model = mcorr
+[       7] Writing initial conditions for  model = mcorr
+[       7] Syncing Archive
+[       7] Gathering Archive Time step
+[       7] Done Gathering Archive Time Step
+[       7] Done Syncing Archive
+[       7] Estimating initial time derivative and initializing time history for model mcorr
+[       7]    Mass Conservation Error: 0.029558294539030548
+[       7]    Mass Conservation Error: 0.029558294539030548
+[       7] Choosing initial time step for model mcorr
+[       7] Initializing time step on model mcorr to dt =  3.30000e+05
+[       7]    Mass Conservation Error: 0.029558294539030548
+[       7] Initializing time history for model step controller
+[       7] Initializing time step on system Default System to dt =  1.00000e-03
+[       7] Initializing step sequence for system Default System to [(0.001, <proteus.Transport.MultilevelTransport object at 0x14590cec3c40>), (0.001, <proteus.Transport.MultilevelTransport object at 0x14590ceed960>), (0.001, <proteus.Transport.MultilevelTransport object at 0x14590cef8ac0>), (0.001, <proteus.Transport.MultilevelTransport object at 0x14590d554280>), (0.001, <proteus.Transport.MultilevelTransport object at 0x1458fdbe89d0>)]
+[       7] Starting time stepping
+[       7] ==============================================================
+[       7] Solving over interval [ 0.00000e+00, 1.00000e-03]
+[       7] ==============================================================
+[       7] System time step t= 1.00000e-03, dt= 1.00000e-03
+[       7] saving previous velocity dofs 0
+[       7] Split operator iteration 0
+[       7] Model: rans2p
+[       7] Fractional step  1.00000e-03 for model rans2p
+[       7] Model step t= 1.00000e-03, dt= 1.00000e-03 for model rans2p
+[       7] Model substep t= 3.30000e+05 for model rans2p
+[       7] Model substep t= 3.30000e+05 for model rans2p model.timeIntegration.t=  1.00000e-03
+[       7] Maximum CFL = 0.0
+[       7]    Newton it 0 norm(r) =  2.85903e+02  		 norm(r)/(rtol*norm(r0)+atol) = 7.14757e+06 test=r
+[       7] before ksp.rtol= 0.01 ksp.atol= 4.000000000000001e-07 ksp.converged= False ksp.its= 0 ksp.norm= 0.0 
+[       7] after ksp.rtol= 0.01 ksp.atol= 4.000000000000001e-07 ksp.converged= True ksp.its= 1 ksp.norm= 0.0 reason = 4
+[       7] KSPpetsc4py return flag False
+[       7] KSP converged flag True
+[       7] Maximum CFL = 0.00010446108445340257
+[       7]    Newton it 1 norm(r) =  7.16563e-02  		 norm(r)/(rtol*norm(r0)+atol) = 1791.41 test=r
+[       7] before ksp.rtol= 0.01 ksp.atol= 4.000000000000001e-07 ksp.converged= False ksp.its= 1 ksp.norm= 0.0 
+[       7] after ksp.rtol= 0.01 ksp.atol= 4.000000000000001e-07 ksp.converged= True ksp.its= 1 ksp.norm= 0.0 reason = 4
+[       7] KSPpetsc4py return flag False
+[       7] KSP converged flag True
+[       7] Maximum CFL = 0.00011676667160207407
+[       7]    Newton it 2 norm(r) =  2.52766e-05  		 norm(r)/(rtol*norm(r0)+atol) =  6.31916e-01
+[       7] Max local conservation (dgp1 enriched all elements) =  1.07046e-09
+[       7] Global divergence = -1.89735e-19
+[       7] Step Taken, t_stepSequence= 0.001 Model step t= 1.00000e-03, dt= 1.00000e-03 for model rans2p
+[       7] Model: vof
+[       7] Fractional step  1.00000e-03 for model vof
+[       7] Phase  0 mass before VOF step =  8.57413e+01
+[       7] Model step t= 1.00000e-03, dt= 1.00000e-03 for model vof
+[       7] Model substep t= 3.30000e+05 for model vof
+[       7] Model substep t= 3.30000e+05 for model vof model.timeIntegration.t=  1.00000e-03
+[       7] ...   Current dt = 0.001
+[       7] ...   Maximum Cell Based CFL = 0.00011401745376322966
+[       7] ...   Maximum Edge Based CFL = 0.0
+[       7]    Newton it 0 norm(r) =  1.09686e-03  		 norm(r)/(rtol*norm(r0)+atol) = 27.4215 test=r
+[       7] before ksp.rtol= 0.001 ksp.atol= 4.0000000000000014e-08 ksp.converged= False ksp.its= 0 ksp.norm= 0.0 
+[       7] after ksp.rtol= 0.001 ksp.atol= 4.0000000000000014e-08 ksp.converged= True ksp.its= 1 ksp.norm= 0.0 reason = 4
+[       7] KSPpetsc4py return flag False
+[       7] KSP converged flag True
+[       7] ...   Current dt = 0.001
+[       7] ...   Maximum Cell Based CFL = 0.00011401745376322966
+[       7] ...   Maximum Edge Based CFL = 0.0
+[       7]    Newton it 1 norm(r) =  2.24542e-04  		 norm(r)/(rtol*norm(r0)+atol) = 5.61355 test=r
+[       7] before ksp.rtol= 0.001 ksp.atol= 4.0000000000000014e-08 ksp.converged= False ksp.its= 1 ksp.norm= 0.0 
+[       8] after ksp.rtol= 0.001 ksp.atol= 4.0000000000000014e-08 ksp.converged= True ksp.its= 1 ksp.norm= 0.0 reason = 4
+[       8] KSPpetsc4py return flag False
+[       8] KSP converged flag True
+[       8] ...   Current dt = 0.001
+[       8] ...   Maximum Cell Based CFL = 0.00011401745376322966
+[       8] ...   Maximum Edge Based CFL = 0.0
+[       8]    Newton it 2 norm(r) =  3.13439e-05  		 norm(r)/(rtol*norm(r0)+atol) =  7.83599e-01
+[       8] FCT Step After Newton
+[       8] Step Taken, t_stepSequence= 0.001 Model step t= 1.00000e-03, dt= 1.00000e-03 for model vof
+[       8] Phase  0 mass after VOF step =  8.57414e+01
+[       8] Model: ncls
+[       8] Fractional step  1.00000e-03 for model ncls
+[       8] Model step t= 1.00000e-03, dt= 1.00000e-03 for model ncls
+[       8] Model substep t= 3.30000e+05 for model ncls
+[       8] Model substep t= 3.30000e+05 for model ncls model.timeIntegration.t=  1.00000e-03
+[       8] ...   Current dt = 0.001
+[       8] ...   Maximum Cell Based CFL = 0.00011567631019082269
+[       8] ...   Maximum Edge Based CFL = 0.0
+[       8]    Newton it 0 norm(r) =  1.03917e-03  		 norm(r)/(rtol*norm(r0)+atol) = 25.9792 test=r
+[       8] before ksp.rtol= 0.001 ksp.atol= 4.0000000000000014e-08 ksp.converged= False ksp.its= 0 ksp.norm= 0.0 
+[       8] after ksp.rtol= 0.001 ksp.atol= 4.0000000000000014e-08 ksp.converged= True ksp.its= 1 ksp.norm= 0.0 reason = 4
+[       8] KSPpetsc4py return flag False
+[       8] KSP converged flag True
+[       8] ...   Current dt = 0.001
+[       8] ...   Maximum Cell Based CFL = 0.00011567631019082269
+[       8] ...   Maximum Edge Based CFL = 0.0
+[       8]    Newton it 1 norm(r) =  6.16211e-05  		 norm(r)/(rtol*norm(r0)+atol) = 1.54053 test=r
+[       8] before ksp.rtol= 0.001 ksp.atol= 4.0000000000000014e-08 ksp.converged= False ksp.its= 1 ksp.norm= 0.0 
+[       8] after ksp.rtol= 0.001 ksp.atol= 4.0000000000000014e-08 ksp.converged= True ksp.its= 1 ksp.norm= 0.0 reason = 4
+[       8] KSPpetsc4py return flag False
+[       8] KSP converged flag True
+[       8] ...   Current dt = 0.001
+[       8] ...   Maximum Cell Based CFL = 0.00011567631019082269
+[       8] ...   Maximum Edge Based CFL = 0.0
+[       8]    Newton it 2 norm(r) =  9.53535e-06  		 norm(r)/(rtol*norm(r0)+atol) =  2.38384e-01
+[       8] Step Taken, t_stepSequence= 0.001 Model step t= 1.00000e-03, dt= 1.00000e-03 for model ncls
+[       8] Model: rdls
+[       8] Fractional step  1.00000e-03 for model rdls
+[       8] resetting signed distance level set to current level set
+[       8] RDLS: max numDiff 3.340818e-13
+[       8] RDLS: max numDiff 3.340818e-13
+[       8] Step exact called for model rdls
+[       8] StepControl base stepExact t_model= 0.001 tOut= 0.001 t_model_last= 0.0 dt_model= 0.001 setting to 0.001 
+[       8] Model step t= 1.00000e-03, dt= 1.00000e-03 for model rdls
+[       8] Model substep t= 1.00000e-03 for model rdls
+[       8] Model substep t= 1.00000e-03 for model rdls model.timeIntegration.t=  2.00000e-03
+[       8]    Newton it 0 norm(r) =  1.26566e-02  		 norm(r)/(rtol*norm(r0)+atol) = 0.632831 test=r
+[       8] before ksp.rtol= 0.001 ksp.atol= 2.0000000000000005e-05 ksp.converged= False ksp.its= 0 ksp.norm= 0.0 
+[       8] after ksp.rtol= 0.001 ksp.atol= 2.0000000000000005e-05 ksp.converged= True ksp.its= 1 ksp.norm= 0.0 reason = 4
+[       8] KSPpetsc4py return flag False
+[       8] KSP converged flag True
+[       8] residual increase 9.753406306586232
+[       8]    Newton it 1 norm(r) =  9.75341e+00  		 norm(r)/(rtol*norm(r0)+atol) = 487.67 test=r
+[       8] before ksp.rtol= 0.001 ksp.atol= 2.0000000000000005e-05 ksp.converged= False ksp.its= 1 ksp.norm= 0.0 
+[       8] after ksp.rtol= 0.001 ksp.atol= 2.0000000000000005e-05 ksp.converged= True ksp.its= 1 ksp.norm= 0.0 reason = 4
+[       8] KSPpetsc4py return flag False
+[       8] KSP converged flag True
+[       8] residual increase 37229010624379.516
+[       8]    Newton it 2 norm(r) =  3.72290e+13  		 norm(r)/(rtol*norm(r0)+atol) = 1.86145e+15 test=r

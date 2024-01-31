@@ -399,7 +399,6 @@ myTpFlowProblem.SystemPhysics.gravity = np.array([0.0,-9.81,0.0])
 m = myTpFlowProblem.SystemPhysics.modelDict
 # ADD RELAXATION ZONES TO AUXILIARY VARIABLES
 
-
 m['flow'].p.initialConditions['p'] = P_IC()
 m['flow'].p.initialConditions['u'] = zero()
 m['flow'].p.initialConditions['v'] = zero()
@@ -410,3 +409,7 @@ m['mcorr'].p.initialConditions['phiCorr'] = zero()
 
 m['flow'].auxiliaryVariables = domain.auxiliaryVariables['twp']
 m['vof'].auxiliaryVariables = domain.auxiliaryVariables['vof']
+
+# add for proteus/fct
+m['flow'].p.coefficients.projection_direction = np.array([1.0, 0.0, 0.0])
+
