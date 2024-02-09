@@ -282,11 +282,11 @@ tank.attachLineIntegralGauges('vof',
 
 
 # +++++++activate pressure and velocity gauges after the wave elevations are validated
-#pressure_gauge_locations= ((35.89-13.98, 1.64, 0), (39.55-13.98, 1.64, 0),(43.10-13.98,1.62,0),(46.87-13.98,1.63,0),(50.52-13.98,1.63,0),(54.19-13.98,1.63,0))
-#tank.attachPointGauges('twp', gauges=((('p',), pressure_gauge_locations),), fileName='pressure_gaugeArray.csv')
+pressure_gauge_locations= ((35.89-13.98, 1.64, 0), (39.55-13.98, 1.64, 0),(43.10-13.98,1.62,0),(46.87-13.98,1.63,0),(50.52-13.98,1.63,0),(54.19-13.98,1.63,0))
+tank.attachPointGauges('twp', gauges=((('p',), pressure_gauge_locations),), fileName='pressure_gaugeArray.csv')
 
-#velocity_gauge_locations=((32.24-13.98,1.25, 0), (43.09-13.98, 1.40, 0),(43.09-13.98,1.55,0),(43.09-13.98,1.72,0),(43.09-13.98,1.86,0),(57.83-13.98,1.38,0))
-#tank.attachPointGauges('twp', gauges=((('u','v'), velocity_gauge_locations),), fileName='velocity_gaugeArray.csv')
+velocity_gauge_locations=((32.24-13.98,1.25, 0), (43.09-13.98, 1.40, 0),(43.09-13.98,1.55,0),(43.09-13.98,1.72,0),(43.09-13.98,1.86,0),(57.83-13.98,1.38,0))
+tank.attachPointGauges('twp', gauges=((('u','v'), velocity_gauge_locations),), fileName='velocity_gaugeArray.csv')
 # +++++++activate pressure and velocity gauges after the wave elevations are validated
 
 
