@@ -4,10 +4,10 @@
 #SBATCH -c 1 # specify 6 threads per process
 #SBATCH -t 00:10:00
 #SBATCH -p workq
-#SBATCH -A loni_ceds3d
+#SBATCH -A hpc_ceds3d
 #SBATCH -o o.out # optional, name of the stdout, using the job number (%j) and the first node (%N)
 #SBATCH -e e.err # optional, name of the stderr, using job and first node values
-#SBATCH -J cox_2D_HD_tr1_CS
+#SBATCH -J cox_2D_HD_020824__CS
 
 date
 
