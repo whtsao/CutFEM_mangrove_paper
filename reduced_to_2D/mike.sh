@@ -2,7 +2,7 @@
 #SBATCH -N 8
 #SBATCH -n 512
 #SBATCH -c 1 # specify 6 threads per process
-#SBATCH -t 01:00:00
+#SBATCH -t 72:00:00
 #SBATCH -p workq
 #SBATCH -A hpc_ceds3d
 #SBATCH -o o.out # optional, name of the stdout, using the job number (%j) and the first node (%N)
