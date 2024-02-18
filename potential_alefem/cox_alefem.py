@@ -184,13 +184,13 @@ def water_dep(h,x0,nb,xb):
 def bathymetry():
     nb = 8
     xb= np.array([[0.,   0.],
-                  [6.,   0.],
-                  [12.,  0.3],
-                  [14.,  0.3],
-                  [17.,  0.],
-                  [18.95,0.],
-                  [23.95,0.3],
-                  [28.95,0.3]])
+                  [3.7308,   0.],
+                  [11.0668,  0.85],
+                  [22.0396,  0.85], # start of the mangrove section
+                  [40.3276,  0.85], # end of the mangrove section
+                  [47.6428,  0.85],
+                  [55.4854,1.5],
+                  [60,1.5]])
     assert xb[-1,0] == L and np.all(xb[:,1] < h),'bathymetry error'
     return nb,xb
 
@@ -793,7 +793,7 @@ def main(x,phi,phit):
     # TIME MARCHING START
     c_frame = 0
     
-    print('enter main',nt,file=wav)
+    print('enter main',nt,file=log)
 
     for i in range(nt-1):
 #        fs_animation(time[i],x[ifs[:],0],x[ifs[:],1],L,h,xb)
@@ -808,7 +808,7 @@ def main(x,phi,phit):
         #ita2 = x[ifs[-1],1]-h
         wgy = get_wave_elevation(h,nfs,ifs,x,wgx)
 #        print(time[i],*wgy,sep=',',file=wav)
-        print(time[i],wgy[0],wgy[1],wgy[2],wgy[3],wgy[4],wgy[5],wgy[6],wgy[7],file=wav,flush=True)
+        print(time[i],wgy[0],wgy[1],wgy[2],wgy[3],wgy[4],wgy[5],wgy[6],wgy[7],wgy[8],wgy[9],wgy[10],wgy[11],wgy[12],wgy[13],file=wav,flush=True)
         #print >>wav,time[i],wgy
 
         # calculate the numerical mass err in %
@@ -878,7 +878,7 @@ import time as tm
 #************************************************************************
 wav = open("wav_quad_wmk.dat", "w")
 mas = open("mass_quad_wmk.dat", "w")
-test = open("test.txt", "w")
+log = open("log.dat", "w")
 bou = open("bound_quad_wmk.dat", "w")
 
 # PHYSICS CONFIGURATIONS
@@ -888,7 +888,7 @@ tho = 998.2
 grav = 9.81
 
 # tank dimensions and 1st-order natural frequency (rad/s)
-L = 80
+L = 60
 h = 1.88
 
 # define bottom bathymetry
@@ -898,6 +898,9 @@ h = 1.88
 Vw = 0.
 for i in range(nb-1):
     Vw += 0.5*(h-xb[i,1]+h-xb[i+1,1])*(xb[i+1,0]-xb[i,0])
+
+# is there mangrove?
+mangrove_density = 'BL'
 
 # claim for some variables to be saved
 #u_cur = np.zeros((n,2))
@@ -938,7 +941,6 @@ n_frame = 20
 # node distribution along vertical direction
 mtd_mesh = 'pwr' # 'even' or 'cos' or 'pwr'
 
-
 # mesh and l2g index
 [nex,ney,ne,nx,ny,n,ln,ndir,idir,nneu1,ineu1,nneu2,ineu2,nneu3,ineu3,ifs,nfs,x] = mesh(L,h,he,mtd_mesh,nb,xb)
 #plotMesh(ln,x)
@@ -952,12 +954,12 @@ smth_fs = False # True or False
 
 # SELECT CASES
 #************************************************************************
-# wmk = wavemakers on both sides
+# wmk = wavemakers on both sides [left side, right side]
 mov_wall = np.array([True, False], dtype=bool) # True when wall is moving
 
 # define wavemaker motion
 Tp = 1.85
-wf = 2.math.pi/Tp
+wf = 2.*math.pi/Tp
 af = 0.2
     
 # left wall motion = af*sin(wf*t)
@@ -979,9 +981,35 @@ for i in range(nt):
     acc3[i] = -wf*wf*af*np.sin(wf*dt*i)
 [phi,phit] = initial_FSBC_wmk(n,ndir,idir,L,h,x)
 
+
+# drag coeficients. for BL and HD cases
+#************************************************************************
+ncell = 28
+h_cell = 0.05
+if mangrove_density=='BL':
+    drag_a = np.zeros(ncell)
+    drag_b = np.zeros(ncell)
+elif mangrove_density=='HD':
+    drag_a = np.array([1.01598046, 1.056763848, 1.053622482, 1.060890643, 1.634469394,
+        1.303890389, 1.356826203, 1.53644328, 1.466590676, 1.047256173,
+        1.44952826, 1.374032547, 1.174505595, 1.126886479, 1.52669959,
+        0.660594698, 0.667565713, 0.646060711, 0.645866241, 0.667577077,
+        0.551551667, 0.742140789, 0.55154939, 0.551554391, 0.742120671,
+        0.742120671, 0.74213481,0.551553115])
+    drag_b = np.array([22.94924271,	22.079065,	21.84350614,	24.47860554,	33.86361375,
+        46.87702123,	33.83201532,	29.130056,	33.5616879,	36.05156563,
+        46.92904458,	67.40867751,	31.029444,	20.9642474,	31.75124684,
+        4.057308537,	3.873747556,	4.256657939,	4.257790109,	3.87360947,
+        4.354486357,	3.874514426,	4.354491403,	4.354471712,	3.874599539,
+        3.874599539,	3.874553776,	4.354479029])
+
 # DEFINE WAVE GAUGES
 #************************************************************************
-wgx = [3., 5.7, 10.5, 12.5, 13.5, 14.5, 15.7, 17.3]
+wgx = [0., 11.38,14.7,15.62,16.54,17.46,18.06,40.62,41.83,42.44,43.35,43.97,51.19]
+
+# DEFINE PRESSURE GAUGES
+#************************************************************************
+# pgx = [0., 11.38,14.7,15.62,16.54,17.46,18.06,40.62,41.83,42.44,43.35,43.97,51.19]
 
 # RUN SIMULATION
 #************************************************************************
