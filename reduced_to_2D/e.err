@@ -1,14 +1,5 @@
+Autoloading mvapich2/2.3.3/gcc-9.3.0
+
+Loading proteus/1.8.1/gcc-9.3.0-mvapich2-2.3.3
+  Loading requirement: gcc/9.3.0 mvapich2/2.3.3/gcc-9.3.0
 WARNING: Error in initializing MVAPICH2 ptmalloc library.Continuing without InfiniBand registration cache support.
-slurmstepd: error: Detected 1 oom_kill event in StepId=209866.0. Some of the step tasks have been OOM Killed.
-srun: error: mike162: task 990: Out Of Memory
-[mike154:mpi_rank_478][handle_cqe] Send desc error in msg to 990, wc_opcode=0
-[mike154:mpi_rank_478][handle_cqe] Msg from 990: wc.status=12 (transport retry counter exceeded), wc.wr_id=0x11f4acf0, wc.opcode=0, vbuf->phead->type=0 = MPIDI_CH3_PKT_EAGER_SEND
-[mike154:mpi_rank_478][mv2_print_wc_status_error] IBV_WC_RETRY_EXC_ERR: This event is generated when a sender is unable to receive feedback from the receiver. This means that either the receiver just never ACKs sender messages in a specified time period, or it has been disconnected or it is in a bad state which prevents it from responding. If this happens when sending the first message, usually it means that the QP connection attributes are wrong or the remote side is not in a state that it can respond to messages. If this happens after sending the first message, usually it means that the remote QP is not available anymore or that there is congestion in the network preventing the packets from reaching on time. Relevant to: RC or DC QPs.
-[mike154:mpi_rank_478][handle_cqe] src/mpid/ch3/channels/mrail/src/gen2/ibv_channel_manager.c:499: [] Got completion with error 12, vendor code=0x81, dest rank=990
-
-[mike154:mpi_rank_478][handle_cqe] Send desc error in msg to 990, wc_opcode=0
-[mike154:mpi_rank_478][handle_cqe] Msg from 990: wc.status=12 (transport retry counter exceeded), wc.wr_id=0x11f4acf0, wc.opcode=0, vbuf->phead->type=0 = MPIDI_CH3_PKT_EAGER_SEND
-[mike154:mpi_rank_478][mv2_print_wc_status_error] IBV_WC_RETRY_EXC_ERR: This event is generated when a sender is unable to receive feedback from the receiver. This means that either the receiver just never ACKs sender messages in a specified time period, or it has been disconnected or it is in a bad state which prevents it from responding. If this happens when sending the first message, usually it means that the QP connection attributes are wrong or the remote side is not in a state that it can respond to messages. If this happens after sending the first message, usually it means that the remote QP is not available anymore or that there is congestion in the network preventing the packets from reaching on time. Relevant to: RC or DC QPs.
-[mike154:mpi_rank_478][handle_cqe] src/mpid/ch3/channels/mrail/src/gen2/ibv_channel_manager.c:499: [] Got completion with error 12, vendor code=0x81, dest rank=990
-
-srun: error: mike154: task 478: Exited with exit code 252

@@ -388,7 +388,6 @@ myTpFlowProblem.domain=domain
 myTpFlowProblem.outputStepping=outputStepping
 
 
-
 myTpFlowProblem.SystemNumerics.cfl=0.33
 myTpFlowProblem.SystemNumerics.useSuperlu=True
 
@@ -411,5 +410,5 @@ m['flow'].auxiliaryVariables = domain.auxiliaryVariables['twp']
 m['vof'].auxiliaryVariables = domain.auxiliaryVariables['vof']
 
 # add for proteus/fct
-m['flow'].p.coefficients.projection_direction = np.array([1.0, 0.0, 0.0])
+#m['flow'].p.coefficients.projection_direction = np.array([1.0, 0.0, 0.0])
 
