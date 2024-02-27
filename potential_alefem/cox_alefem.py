@@ -488,8 +488,9 @@ def FSBC_phit(grav,h,ifs,n,x,unod):
     dpdt = np.zeros(n)
     phit = np.zeros(n)
     for i in ifs:
-        dpdt[i] = 0.5*(unod[i][0]**2+unod[i][1]**2)-grav*(x[i][1]-h) #-x[i][0]*acc
-        phit[i] = dpdt[i]-(unod[i][0]**2+unod[i][1]**2)
+        v_sqr = unod[i][0]**2+unod[i][1]**2
+        dpdt[i] = 0.5*v_sqr-grav*(x[i][1]-h)-mu1*phi[i]-mu2*phi[i]*math.sqrt(v_sqr) #-x[i][0]*acc
+        phit[i] = dpdt[i]-v_sqr
     return phit,dpdt
 
 def total_phi(n,x,phi,u,v):
@@ -789,6 +790,18 @@ def guass_qua(gq_order):
             c += 1
     return ngp,xg,wg
 
+def periodic(h,wave_period,wave_height):
+    k0 = 1.
+    e = 1.
+    while (e > 1.e-7):
+        k1 = k0-(k0*math.tanh(k0*h)-(2.*math.pi/wave_period)**2/9.81)/(math.tanh(k0*h)+k0-k0*(math.tanh(k0*h))**2)
+        e = abs((k1-k0)/k0)
+        hs = 2.*(math.cosh(2.*k1*h)-1.)/(math.sinh(2.*k1*h)+2.*k1*h)
+        s = wave_height/hs
+        wave_amplitude = 0.5*s
+        k0 = k1
+    return wave_amplitude
+
 def main(x,phi,phit):
     # TIME MARCHING START
     c_frame = 0
@@ -808,7 +821,7 @@ def main(x,phi,phit):
         #ita2 = x[ifs[-1],1]-h
         wgy = get_wave_elevation(h,nfs,ifs,x,wgx)
 #        print(time[i],*wgy,sep=',',file=wav)
-        print(time[i],wgy[0],wgy[1],wgy[2],wgy[3],wgy[4],wgy[5],wgy[6],wgy[7],wgy[8],wgy[9],wgy[10],wgy[11],wgy[12],wgy[13],file=wav,flush=True)
+        print(time[i],wgy[0],wgy[1],wgy[2],wgy[3],wgy[4],wgy[5],wgy[6],wgy[7],wgy[8],wgy[9],wgy[10],wgy[11],wgy[12],file=wav,flush=True)
         #print >>wav,time[i],wgy
 
         # calculate the numerical mass err in %
@@ -869,6 +882,7 @@ from scipy.sparse.linalg import spsolve
 #from cython.parallel import prange
 from IPython import display
 import time as tm
+import statistics
 #import cython
 #cimport cython
 #from cython.parallel import prange # for partitioned mesh
@@ -900,7 +914,7 @@ for i in range(nb-1):
     Vw += 0.5*(h-xb[i,1]+h-xb[i+1,1])*(xb[i+1,0]-xb[i,0])
 
 # is there mangrove?
-mangrove_density = 'BL'
+mangrove_density = 'HD'
 
 # claim for some variables to be saved
 #u_cur = np.zeros((n,2))
@@ -916,7 +930,6 @@ nthrd = 8
 # n-by-n gaussian quadrature nodes on a element
 gq_order = 2 #  n = 1, 2, 3, 4
 
-
 # Guassian quadrature
 [ngp,xg,wg] = guass_qua(gq_order)    
 
@@ -926,7 +939,7 @@ xc = loc_nod()
 # mesh size and time interval
 he = 0.05
 dt = 0.005
-T = 200.
+T = 100.
 nt = int(T/dt)+1
 time = np.linspace(0.,T,nt)
 
@@ -958,9 +971,10 @@ smth_fs = False # True or False
 mov_wall = np.array([True, False], dtype=bool) # True when wall is moving
 
 # define wavemaker motion
-Tp = 1.85
+Tp = 1.85 # wave period
+Hp = 0.2 # wave height
+af = periodic(h,Tp,Hp)
 wf = 2.*math.pi/Tp
-af = 0.2
     
 # left wall motion = af*sin(wf*t)
 dis1 = np.zeros(nt)
@@ -1003,13 +1017,20 @@ elif mangrove_density=='HD':
         4.354486357,	3.874514426,	4.354491403,	4.354471712,	3.874599539,
         3.874599539,	3.874553776,	4.354479029])
 
+mu1 = 2.*statistics.mean(drag_a)
+mu2 = 2.*statistics.mean(drag_b)
+
 # DEFINE WAVE GAUGES
 #************************************************************************
 wgx = [0., 11.38,14.7,15.62,16.54,17.46,18.06,40.62,41.83,42.44,43.35,43.97,51.19]
 
 # DEFINE PRESSURE GAUGES
 #************************************************************************
-# pgx = [0., 11.38,14.7,15.62,16.54,17.46,18.06,40.62,41.83,42.44,43.35,43.97,51.19]
+pgx = [35.89-13.98, 39.55-13.98, 43.10-13.98, 46.87-13.98, 50.52-13.98, 54.19-13.98]
+pg = np.zeros((len(pgx),2))
+for i in range(len(pgx)):
+    pg[i,0] = pgx[i]
+    pg[i,1] = bathymetry_function(pg[i,0],nb,xb)
 
 # RUN SIMULATION
 #************************************************************************
