@@ -790,6 +790,38 @@ def guass_qua(gq_order):
             c += 1
     return ngp,xg,wg
 
+def pressure_point_gauge(nx,ny,x,p1,p2,p3,p,pg):
+    pg1 = np.zeros(len(pg))
+    pg2 = np.zeros(len(pg))
+    pg3 = np.zeros(len(pg))
+    pg4 = np.zeros(len(pg))
+    for k in range(len(pg)):
+        for i in range(nx-1):
+            if pg[k,0] >= x[i,0] and pg[k,0] < x[i+1,0]:
+                tempx = (pg[k,0]-x[i,0])/(x[i+1,0]-x[i,0])
+                for j in range(ny-1):
+                    y1 = x[nx*j+i,1] + tempx*(x[nx*j+i+1,1]-x[nx*j+i,1])
+                    y2 = x[nx*(j+1)+i,1] + tempx*(x[nx*(j+1)+i+1,1]-x[nx*(j+1)+i,1])
+                    if pg[k,1] >= y1 and pg[k,1] < y2:
+                        tempy = (pg[k,1]-y1)/(y2-y1)
+                        # interpolation for p1
+                        ptemp1 = p1[nx*j+i] + tempx*(p1[nx*j+i+1]-p1[nx*j+i])
+                        ptemp2 = p1[nx*(j+1)+i] + tempx*(p1[nx*(j+1)+i+1]-p1[nx*(j+1)+i])
+                        pg1[k] = ptemp1 + tempy*(ptemp2-ptemp1)
+                        # interpolation for p2
+                        ptemp1 = p2[nx*j+i] + tempx*(p2[nx*j+i+1]-p2[nx*j+i])
+                        ptemp2 = p2[nx*(j+1)+i] + tempx*(p2[nx*(j+1)+i+1]-p2[nx*(j+1)+i])
+                        pg2[k] = ptemp1 + tempy*(ptemp2-ptemp1)
+                        # interpolation for p3
+                        ptemp1 = p3[nx*j+i] + tempx*(p3[nx*j+i+1]-p3[nx*j+i])
+                        ptemp2 = p3[nx*(j+1)+i] + tempx*(p3[nx*(j+1)+i+1]-p3[nx*(j+1)+i])
+                        pg3[k] = ptemp1 + tempy*(ptemp2-ptemp1)
+                        # interpolation for p
+                        ptemp1 = p[nx*j+i] + tempx*(p[nx*j+i+1]-p[nx*j+i])
+                        ptemp2 = p[nx*(j+1)+i] + tempx*(p[nx*(j+1)+i+1]-p[nx*(j+1)+i])
+                        pg4[k] = ptemp1 + tempy*(ptemp2-ptemp1)
+    return pg1,pg2,pg3,pg4
+
 def periodic(h,wave_period,wave_height):
     k0 = 1.
     e = 1.
@@ -833,6 +865,13 @@ def main(x,phi,phit):
         [u_cur,dpdt_cur] = bvp_solver(mtd_mesh,mtd_unod,mtd_remesh,mov_wall,vel1[i],vel3[i],grav,h,ne,nx,ny,n,ln,ndir,idir,nfs,ifs,ngp,xg,wg,xc,x,phi)
         [patm,p1,p2,p3,p] = pressure(tho,grav,h,ic,ifs,n,x,dpdt_cur,u_cur)
         
+        # output pressure at point gauges
+        [pg1,pg2,pg3,pg4] = pressure_point_gauge(nx,ny,x,p1,p2,p3,p,pg)
+        print(time[i],pg1[0],pg1[1],pg1[2],pg1[3],pg1[4],pg1[5],file=pre_1,flush=True)
+        print(time[i],pg2[0],pg2[1],pg2[2],pg2[3],pg2[4],pg2[5],file=pre_2,flush=True)
+        print(time[i],pg3[0],pg3[1],pg3[2],pg3[3],pg3[4],pg3[5],file=pre_3,flush=True)
+        print(time[i],pg4[0],pg4[1],pg4[2],pg4[3],pg4[4],pg4[5],file=pre_4,flush=True)
+
        # if i % n_frame == 0:
        #     save_pic(c_frame,ln,x,u_cur,p)
        #     c_frame += 1
@@ -891,6 +930,10 @@ import statistics
 # OPEN FILES
 #************************************************************************
 wav = open("wav_quad_wmk.dat", "w")
+pre_1 = open("pre_1_quad_wmk.dat", "w")
+pre_2 = open("pre_2_quad_wmk.dat", "w")
+pre_3 = open("pre_3_quad_wmk.dat", "w")
+pre_4 = open("pre_4_quad_wmk.dat", "w")
 mas = open("mass_quad_wmk.dat", "w")
 log = open("log.dat", "w")
 bou = open("bound_quad_wmk.dat", "w")
