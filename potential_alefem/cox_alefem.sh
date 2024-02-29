@@ -7,7 +7,7 @@
 #SBATCH -A hpc_ceds3d
 #SBATCH -o o.out # optional, name of the stdout, using the job number (%j) and the first node (%N)
 #SBATCH -e e.err # optional, name of the stderr, using job and first node values
-#SBATCH -J cox_potential_model
+#SBATCH -J cox_potential_alefem
 
 date
 

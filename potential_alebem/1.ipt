@@ -1,0 +1,47 @@
+*input the coordinate
+* x  y  z
+
+0	0
+3.7308	0
+11.0668	0.85
+47.6428	0.85
+55.4854	1.5
+60	1.5
+60	1.88
+0	1.88
+*====================
+*input the element number
+
+1000
+10
+20
+200
+500
+100
+50
+20
+*====================
+*input the bundary type
+*1 = phi is given, 0 = partial phi is given
+
+1
+0
+0
+0
+0
+0
+0
+0
+*=======================
+*input the gaussian integratial points no.
+
+8 
+*=======================
+*input the gravity, mu, channel weidth, tho
+
+9.81   0.1   2.0   22.0396   40.3276      100   1.0   998.2
+*=======================
+*endtime, delt time, output step, icon, niter, etol
+
+100   0.001   100   100   4000   1.0e-6
+*file end

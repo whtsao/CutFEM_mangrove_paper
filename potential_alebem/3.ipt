@@ -1,0 +1,17 @@
+*Do you need free-surface smoothing: 1 = YES; 0 = NO
+
+0
+*====================
+*number of neighboring node and degree of polynomial for SG filter
+*note that nl = nr and nl + nr < m
+
+10   3
+*====================
+*number of gaussian quadrature for calculating arc length
+
+4
+*====================
+*do you use ALE approach? 0 = NO; 1 = YES
+
+1
+*FILE END
