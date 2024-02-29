@@ -395,13 +395,15 @@ subroutine input_1(npl,coor,nfield,nnode,nelm,nelem,me,ns,buntyp,dep,clen,nga,gr
 !---read beta
          call headline(id,4)
          read(4,*) b
-
+         
+         mu1=0.d0
+         mu2=0.d0
          do i=1,nlayer
          mu1=mu1+a(i)
          mu2=mu2+b(i)
          end do
-         mu1=mu1/nlayer
-         mu2=mu2/nlayer
+         mu1=2.*mu1/nlayer ! need to times two in 2D simulation
+         mu2=2.*mu2/nlayer
 
       return
     end
@@ -1341,17 +1343,17 @@ subroutine ale_acc(delttime,grav,mu1,mu2,porous_x1,porous_x2,porous_x3,clen,npl,
 	  end do
     end do
 
-    do i=1,ns(1)
-        if (node(i,1)>=porous_x1 .and. node(i,1)<=porous_x2)then
-            d2pdt(i)=d2pdt(i)-mu1*dpdt(i)
-            dpdtdx(i,1)=dpdtdx(i,1)-mu1*dp(i,1) !-mu2*dp(i,1) not yet corrected
-            dpdtdx(i,2)=dpdtdx(i,2)-mu1*dp(i,2)
-        else if (node(i,1)>=porous_x3)then
-            d2pdt(i)=d2pdt(i)-mu1*dpdt(i)
-            dpdtdx(i,1)=dpdtdx(i,1)-mu1*dp(i,1)
-            dpdtdx(i,2)=dpdtdx(i,2)-mu1*dp(i,2)
-        end if
-    end do
+!    do i=1,ns(1)
+!        if (node(i,1)>=porous_x1 .and. node(i,1)<=porous_x2)then
+!            d2pdt(i)=d2pdt(i) !-mu1*dpdt(i)
+!            dpdtdx(i,1)=dpdtdx(i,1) !-mu1*dp(i,1) !-mu2*dp(i,1) not yet corrected
+!            dpdtdx(i,2)=dpdtdx(i,2) !-mu1*dp(i,2)
+!        else if (node(i,1)>=porous_x3)then
+!            d2pdt(i)=d2pdt(i)-mu1*dpdt(i)
+!            dpdtdx(i,1)=dpdtdx(i,1) !-mu1*dp(i,1)
+!            dpdtdx(i,2)=dpdtdx(i,2) !-mu1*dp(i,2)
+!        end if
+!    end do
 
 !---calculate the mesh acceleration
       do i=1,nelem(1)+1

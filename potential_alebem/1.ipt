@@ -19,7 +19,7 @@
 500
 100
 50
-20
+50
 *====================
 *input the bundary type
 *1 = phi is given, 0 = partial phi is given

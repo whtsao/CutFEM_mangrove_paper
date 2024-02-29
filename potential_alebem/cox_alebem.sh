@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH -N 1
-#SBATCH -n 64
+#SBATCH -N 2
+#SBATCH -n 128
 #SBATCH -c 1# specify 6 threads per process
-#SBATCH -t 01:00:00
+#SBATCH -t 24:00:00
 #SBATCH -p workq
 #SBATCH -A hpc_ceds3d
 #SBATCH -o o.out # optional, name of the stdout, using the job number (%j) and the first node (%N)
