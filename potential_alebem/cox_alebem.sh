@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH -N 1
-#SBATCH -n 16
+#SBATCH -n 64
 #SBATCH -c 1# specify 6 threads per process
-#SBATCH -t 72:00:00
+#SBATCH -t 01:00:00
 #SBATCH -p workq
 #SBATCH -A hpc_ceds3d
 #SBATCH -o o.out # optional, name of the stdout, using the job number (%j) and the first node (%N)
@@ -22,14 +22,15 @@ export WORK_DIR=/work/$USER
 ##SLURM_JOB_NODELIST: List of nodes allocated to the job
 ##SLURM_SUBMIT_DIR: Directory where the sbatch command was executed
 
-mkdir -p $WORK_DIR/wavebar_alebem.$SLURM_JOBID
-cd $WORK_DIR/wavebar_alebem.$SLURM_JOBID 
+mkdir -p $WORK/$SLURM_JOB_NAME.$SLURM_JOBID
+cd $WORK/$SLURM_JOB_NAME.$SLURM_JOBID
 cp $SLURM_SUBMIT_DIR/*.sh .
 cp $SLURM_SUBMIT_DIR/*.ipt .
 cp $SLURM_SUBMIT_DIR/*.f90 .
 cp $SLURM_SUBMIT_DIR/*.out .
 cp $SLURM_SUBMIT_DIR/*.err .
-ifort -qopenmp cox_alebem.f90 -mkl
+ifort -qopenmp cox_alebem.f90 -qmkl # run on mike
+#ifort -qopenmp cox_alebem.f90 -mkl # run on qbc
 
 ./a.out
 
