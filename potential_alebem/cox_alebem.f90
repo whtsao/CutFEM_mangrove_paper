@@ -525,7 +525,7 @@ call bwloc(-wgx(i),ns(1),-node(1:ns(1),1),0,ir,il)
 temp=(wgx(i)-node(il,1))/(node(ir,1)-node(il,1))
 wgy(i)=node(il,2)+temp*(node(ir,2)-node(il,2))-dep
 end do
-write(7,"(11(e15.8,1x))") time,wgy(1:nwg)*100.d0
+write(7,"(20(e15.8,1x))") time,wgy(1:nwg)*100.d0
 
       return
     end
