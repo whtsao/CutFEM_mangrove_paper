@@ -39,7 +39,7 @@
 *=======================
 *input the gravity, mu, channel weidth, tho
 
-9.81   0.1   2.0   22.0396   40.3276      100   1.0   998.2
+9.81   0.   0.   22.0396   40.3276      100   1.0   998.2
 *=======================
 *endtime, delt time, output step, icon, niter, etol
 

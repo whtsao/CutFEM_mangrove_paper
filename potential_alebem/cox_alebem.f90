@@ -5,7 +5,7 @@
       program water_wave
       implicit none
       integer smtyp,nnrl,mdeg
-	  integer i,j,nt,nga,narc,ntim,outstep,nfield,npl,wtyp,nnode,nelm,icon,niter,nwg,e1loc,outyp,aletyp      
+	  integer i,j,nt,nga,narc,ntim,outstep,nfield,npl,wtyp,nnode,nelm,icon,niter,nwg,e1loc,outyp,aletyp,forest_typ
 	  integer,allocatable::nelem(:),me(:),ns(:),buntyp(:),ln(:,:),ipiv(:)
 	  real*8 dep,clen,d_out,grav,mu1,mu2,porous_x1,porous_x2,porous_x3,width,tho,delttime,wgx(20)
 	  real*8 time,dis,vel,acc,p_atm,for,ddis,dtemp,wc,e1,e2,etol
@@ -99,7 +99,11 @@
     d2pdtm=0.d0
     
 !---compute mu1 and mu2 for the manfrove section
-        call input_4(mu1,mu2)
+        call input_4(forest_typ,mu1,mu2)
+        if (forest_typ ==0) then
+                mu1=0.d.
+                mu2=0.d0
+        end if
 
 !---prepare if outlet is a wall (if a wall, no iteration needed)
     if (outyp==0)then
@@ -381,14 +385,20 @@ subroutine input_1(npl,coor,nfield,nnode,nelm,nelem,me,ns,buntyp,dep,clen,nga,gr
       return
     end
 !**********************************************************************
-      subroutine input_4(mu1,mu2)
+      subroutine input_4(forest_typ,mu1,mu2)
 !**********************************************************************
       implicit none
-      integer i,nlayer
+      integer i,forest_typ,nlayer
       real*8 mu1,mu2,a(28),b(28)
       character*2 id
       id = '*'
-      nlayer = 24
+      
+!---read alpha
+         call headline(id,4)
+         read(4,*) forest_typ
+!---read alpha
+         call headline(id,4)
+         read(4,*) nlayer
 !---read alpha
          call headline(id,4)
          read(4,*) a
