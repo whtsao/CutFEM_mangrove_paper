@@ -101,7 +101,7 @@
 !---compute mu1 and mu2 for the manfrove section
         call input_4(forest_typ,mu1,mu2)
         if (forest_typ ==0) then
-                mu1=0.d.
+                mu1=0.d0
                 mu2=0.d0
         end if
 
