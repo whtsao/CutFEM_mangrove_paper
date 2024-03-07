@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH -N 4
-#SBATCH -n 192
+#SBATCH -N 8
+#SBATCH -n 384
 #SBATCH -c 1 # specify 6 threads per process
-#SBATCH -t 01:00:00
+#SBATCH -t 24:00:00
 #SBATCH -p workq
-#SBATCH -A hpc_ceds3d
+#SBATCH -A loni_ceds3d
 #SBATCH -o o.out # optional, name of the stdout, using the job number (%j) and the first node (%N)
 #SBATCH -e e.err # optional, name of the stderr, using job and first node values
 #SBATCH -J cox_2D_HD_r1
