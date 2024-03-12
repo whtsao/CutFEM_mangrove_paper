@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH -N 8
-#SBATCH -n 384
+#SBATCH -N 32
+#SBATCH -n 1536
 #SBATCH -c 1 # specify 6 threads per process
-#SBATCH -t 24:00:00
+#SBATCH -t 72:00:00
 #SBATCH -p workq
 #SBATCH -A loni_ceds3d
 #SBATCH -o o.out # optional, name of the stdout, using the job number (%j) and the first node (%N)
@@ -34,7 +34,7 @@ cp $SLURM_SUBMIT_DIR/*.sh .
 
 #srun parun -l5 -v -p --TwoPhaseFlow cox_flume2DV.py -C "he=0.02 mangrove_porous=True filename='inp_HD_TR1.csv'"
 #srun parun -l5 -v -p --hotStart --TwoPhaseFlow cox_flume2DV.py -C "he=0.04 mangrove_porous=True filename='inp_HD_TR1.csv'"
-srun parun -l5 -v -p --TwoPhaseFlow cox_flume2DV.py -C "he=0.1 mangrove_porous=True filename='inp_HD_TR1.csv'"
+srun parun -l5 -v -p --TwoPhaseFlow cox_flume2DV.py -C "he=0.04 mangrove_porous=True filename='inp_HD_TR1.csv'"
 
 
 date
