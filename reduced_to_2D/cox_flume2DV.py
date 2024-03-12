@@ -271,24 +271,32 @@ if opts.mangrove_porous:
 
 
 
-
 #column_gauge_locations=[((13.98,0.,0.),(13.98,ymax,0.)),((25.36,0.85,0.),(25.36,ymax,0.)),((28.68,0.85,0.),(28.68,ymax,0.)),((29.6,0.85,0.),(29.6,ymax,0.)),((30.52,0.85,0.),(30.52,ymax,0.)),((31.44,0.85,0.),(31.44,ymax,0.)),((32.04,0.85,0.),(32.04,ymax,0.)),((54.6,0.85,0.),(54.6,ymax,0.)),((55.81,0.85,0.),(55.81,ymax,0.)),((56.42,0.85,0.),(56.42,ymax,0.)),((57.33,0.85,0.),(57.33,ymax,0.)),((57.95,0.85,0.),(57.95,ymax,0.)),((65.17,0.85+(65.17-61)/(87-61)*(3.02-0.85),0.),(65.17,ymax,0.))]
 column_gauge_locations=[((0.01,0.,0.),(0.01,ymax,0.)),((11.38,slope1,0.),(11.38,ymax,0.)),((14.7,slope1,0.),(14.7,ymax,0.)),((15.62,slope1,0.),(15.62,ymax,0.)),((16.54,0.85,0.),(16.54,ymax,0.)),((17.46,slope1,0.),(17.46,ymax,0.)),((18.06,slope1,0.),(18.06,ymax,0.)),((40.62,slope1,0.),(40.62,ymax,0.)),((41.83,slope1,0.),(41.83,ymax,0.)),((42.44,slope1,0.),(42.44,ymax,0.)),((43.35,slope1,0.),(43.35,ymax,0.)),((43.97,slope1,0.),(43.97,ymax,0.)),((51.19,slope1+(51.19-47.6428)/(73.1639-47.6428)*(slope2-slope1),0.),(51.19,ymax,0.))]
-
 
 tank.attachLineIntegralGauges('vof',
                               gauges=((('vof',), column_gauge_locations),),                     
                               fileName='column_gauges.csv') 
 
 
-# +++++++activate pressure and velocity gauges after the wave elevations are validated
 pressure_gauge_locations= ((35.89-13.98, 1.24, 0), (39.55-13.98, 1.24, 0),(43.10-13.98,1.22,0),(46.87-13.98,1.23,0),(50.52-13.98,1.23,0),(54.19-13.98,1.23,0))
 tank.attachPointGauges('twp', gauges=((('p',), pressure_gauge_locations),), fileName='pressure_gaugeArray.csv')
 
 velocity_gauge_locations=((32.24-13.98,1.25, 0), (43.09-13.98, 1.40, 0),(43.09-13.98,1.55,0),(43.09-13.98,1.72,0),(43.09-13.98,1.86,0),(57.83-13.98,1.38,0))
 tank.attachPointGauges('twp', gauges=((('u','v'), velocity_gauge_locations),), fileName='velocity_gaugeArray.csv')
-# +++++++activate pressure and velocity gauges after the wave elevations are validated
 
+
+
+# +++++record the wave elevations and velocity to compute hydrostatic and hydrodynamic pressure
+column_gauge_locations_2=[((35.89-13.98,slope1,0.),(35.89-13.98,ymax,0.)),((39.55-13.98,slope1,0.),(39.55-13.98,ymax,0.)),((43.10-13.98,slope1,0.),(43.10-13.98,ymax,0.)),((50.52-13.98,slope1,0.),(50.52-13.98,ymax,0.))]
+
+tank.attachLineIntegralGauges('vof',
+                              gauges=((('vof',), column_gauge_locations_2),),                     
+                              fileName='column_gauges_for_p.csv') 
+
+
+velocity_gauge_locations_2=((35.89-13.98, 1.24, 0), (39.55-13.98, 1.24, 0),(43.10-13.98,1.22,0),(46.87-13.98,1.23,0),(50.52-13.98,1.23,0),(54.19-13.98,1.23,0))
+tank.attachPointGauges('twp', gauges=((('u','v'), velocity_gauge_locations_2),), fileName='velocity_gaugeArray_for_p.csv')
 
 
     
