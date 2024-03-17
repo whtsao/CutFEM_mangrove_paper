@@ -288,7 +288,7 @@ tank.attachPointGauges('twp', gauges=((('u','v'), velocity_gauge_locations),), f
 
 
 # +++++record the wave elevations and velocity to compute hydrostatic and hydrodynamic pressure
-column_gauge_locations_2=[((35.89-13.98,slope1,0.),(35.89-13.98,ymax,0.)),((39.55-13.98,slope1,0.),(39.55-13.98,ymax,0.)),((43.10-13.98,slope1,0.),(43.10-13.98,ymax,0.)),((50.52-13.98,slope1,0.),(50.52-13.98,ymax,0.))]
+column_gauge_locations_2=[((35.89-13.98,slope1,0.),(35.89-13.98,ymax,0.)),((39.55-13.98,slope1,0.),(39.55-13.98,ymax,0.)),((43.10-13.98,slope1,0.),(43.10-13.98,ymax,0.)),((50.52-13.98,slope1,0.),(50.52-13.98,ymax,0.)),((57.83-13.98,slope1,0.),(57.83-13.98,ymax,0.))]
 
 tank.attachLineIntegralGauges('vof',
                               gauges=((('vof',), column_gauge_locations_2),),                     

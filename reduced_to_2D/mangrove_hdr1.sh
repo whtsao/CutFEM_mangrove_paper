@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH -N 32
-#SBATCH -n 1536
+#SBATCH -N 16
+#SBATCH -n 768
 #SBATCH -c 1 # specify 6 threads per process
 #SBATCH -t 72:00:00
 #SBATCH -p workq
@@ -34,7 +34,7 @@ cp $SLURM_SUBMIT_DIR/*.sh .
 
 #srun parun -l5 -v -p --TwoPhaseFlow cox_flume2DV.py -C "he=0.02 mangrove_porous=True filename='inp_HD_TR1.csv'"
 #srun parun -l5 -v -p --hotStart --TwoPhaseFlow cox_flume2DV.py -C "he=0.04 mangrove_porous=True filename='inp_HD_TR1.csv'"
-srun parun -l5 -v -p --TwoPhaseFlow cox_flume2DV.py -C "he=0.04 mangrove_porous=True filename='inp_HD_TR1.csv'"
+srun parun -l5 -v -p --TwoPhaseFlow cox_flume2DV.py -C "he=0.06 mangrove_porous=True filename='inp_HD_TR1.csv'"
 
 
 date
